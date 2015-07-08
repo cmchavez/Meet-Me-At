@@ -3,5 +3,5 @@
 <% @users.each do |u| %>
 	First Name: <%= u.firstname %><br>
 	Last Name: <%= u.lastname %><br>
-	Picture: <%= image_tag current_user.image%><br>
+	Picture: <%= image_tag u.image%><br>
 <% end %>
