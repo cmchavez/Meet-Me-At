@@ -1,2 +1,11 @@
-<h1>Statics#home</h1>
-<p>Find me in app/views/statics/home.html.erb</p>
+<h1>Welcome to MeetMe@</h1>
+<% if current_user %>
+Hello <%= current_user.firstname%><br>
+<%= current_user.email %><br>
+<%= current_user.firstname %><br>
+<%= current_user.lastname %><br>
+<%= image_tag current_user.image%><br>
+<% end%>
+
+<%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
+<%= link_to "edit my profile", edit_user_registration_path(current_user) %>

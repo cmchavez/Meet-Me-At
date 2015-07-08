@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'statics/home'
+  root 'statics#home'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
   
