@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
   root 'statics#home'
+
+  get "/users" => "users#index", as: :users
+  
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
   
