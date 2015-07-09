@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery2
 //= require jquery_ujs
 //= require users
 //= require chat
@@ -34,7 +34,7 @@ var ready = function () {
         var recipient_id = $(this).data('rip');
  
         $.post("/invites", { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
-            chatBox.chatWith(data.conversation_id);
+            chatBox.chatWith(data.invite_id);
         });
     });
  

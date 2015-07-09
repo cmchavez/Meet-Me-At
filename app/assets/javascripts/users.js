@@ -1,7 +1,7 @@
 var ready = function () {
  
     /**
-     * When the send message link on our home page is clicked
+     * When the send message link on our home page is clicked   
      * send an ajax request to our rails app with the sender_id and
      * recipient_id
      */
@@ -13,7 +13,7 @@ var ready = function () {
         var recipient_id = $(this).data('rip');
  
         $.post("/invites", { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
-            chatBox.chatWith(data.conversation_id);
+            chatBox.chatWith(data.invite_id);
         });
     });
  
