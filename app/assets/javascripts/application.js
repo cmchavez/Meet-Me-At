@@ -15,6 +15,7 @@
 //= require chat
 //= require turbolinks
 //= require_tree .
+//= require private_pub
 
 
 var ready = function () {
@@ -78,8 +79,8 @@ var ready = function () {
     $('a.conversation').click(function (e) {
         e.preventDefault();
  
-        var conversation_id = $(this).data('cid');
-        chatBox.chatWith(conversation_id);
+        var invite_id = $(this).data('cid');
+        chatBox.chatWith(invite_id);
     });
  
  
