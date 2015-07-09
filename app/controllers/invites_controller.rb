@@ -10,7 +10,7 @@ class InvitesController < ApplicationController
 			@invite = Invite.create!(invite_params)
 		end
 
-		render json: { conversation_id: @invite.id }
+		render json: { invite_id: @invite.id }
 	end
 
 	def show
