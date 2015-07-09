@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  # to tell rails which foreign key to use
+  has_many :invites, :foreign_key => :sender_id
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
