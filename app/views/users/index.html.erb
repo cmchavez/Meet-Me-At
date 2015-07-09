@@ -4,4 +4,6 @@
 	First Name: <%= u.firstname %><br>
 	Last Name: <%= u.lastname %><br>
 	Picture: <%= image_tag u.image%><br>
+	<%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+                    "data-sid" => current_user.id, "data-rip" => u.id %><br>
 <% end %>
