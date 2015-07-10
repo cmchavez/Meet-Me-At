@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'friendships/create'
+
+  get 'friendships/destroy'
+
   resources :invites do
     resources :messages
   end
