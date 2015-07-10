@@ -36,19 +36,7 @@ ActiveRecord::Schema.define(version: 20150709025925) do
   add_index "meetmes", ["recipient_id"], name: "index_meetmes_on_recipient_id", using: :btree
   add_index "meetmes", ["sender_id"], name: "index_meetmes_on_sender_id", using: :btree
 
-  create_table "messages", force: :cascade do |t|
-    t.string   "name"
-    t.string   "location"
-    t.string   "sendto"
-    t.string   "description"
-    t.integer  "invite_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "messages", ["invite_id"], name: "index_messages_on_invite_id", using: :btree
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+  
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -77,6 +65,5 @@ ActiveRecord::Schema.define(version: 20150709025925) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "messages", "invites"
-  add_foreign_key "messages", "users"
+
 end
