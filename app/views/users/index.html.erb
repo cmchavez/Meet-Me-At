@@ -1,9 +1,16 @@
-<h1>All Users</h1>
+<h1>All Users </h1>
 
 <% @users.each do |u| %>
-	First Name: <%= u.firstname %><br>
-	Last Name: <%= u.lastname %><br>
-	Picture: <%= image_tag u.image%><br>
-	<%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
-                    "data-sid" => current_user.id, "data-rip" => u.id %><br>
+	<tr>
+		<td><%= u.firstname %></td><br>
+		<td><%= image_tag u.image%></td><br>
+		<td><%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+	                    "data-sid" => current_user.id, "data-rip" => u.id %>
+
+      		</td><br>
+      		<td><%= link_to "Add Friend", friendships_create_path(:friend_id => u), :method => :post %></td>
+      	</tr>
 <% end %>
+
+<%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
+<%= link_to "My Profile", user_path(current_user) %>

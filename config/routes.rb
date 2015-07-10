@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'friendships/create'
-
-  get 'friendships/destroy'
 
   resources :invites do
     resources :messages
@@ -10,13 +7,17 @@ Rails.application.routes.draw do
 
   root 'statics#home'
 
-  get "/users" => "users#index", as: :users
+ 
   
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
 
   
-  
+  post 'friendships/create' => 'friendships#create'
+  delete 'friendships/:id' => 'friendships#destroy', as: :friendship
+
+  get "users" => "users#index", as: :users
+  get "users/:id" => "users#show", as: :user
 
 
   # The priority is based upon order of creation: first created -> highest priority.
