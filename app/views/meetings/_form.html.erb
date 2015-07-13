@@ -1,0 +1,12 @@
+<%= form_for @meeting do |m| %>
+	<p>Meeting Name</p>
+	<p><%= m.text_field :name%></p><br>
+	<p>Meeting Location</p>
+	<p><%= m.text_field :location%></p><br>
+	<p>Meeting time</p>
+	<p><%= m.datetime_select :time%></p><br>
+	<p>Meeting description</p>
+	<p><%= m.text_field :description%></p><br>
+	
+	<p><%= m.submit %></p>
+ <%end %>

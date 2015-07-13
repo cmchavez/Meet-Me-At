@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :meetings
+  has_many :receivers, :through => :meetings
+  has_many :inverse_meetings, :class_name => "Meeting", :foreign_key => "receiver_id"
+  has_many :inverse_receivers, :through => :inverse_meetings, :source => :user
+  
 
   has_many :friendships
   has_many :friends, :through => :friendships

@@ -8,7 +8,8 @@
 	                    "data-sid" => current_user.id, "data-rip" => u.id %>
 
       		</td><br>
-      		<td><%= link_to "Add Friend", friendships_create_path(:friend_id => u), :method => :post %></td>
+      		<td><%= link_to "Add Friend", friendships_create_path(:friend_id => u), :method => :post %></td><br>
+      		<td><%= link_to "Add a Meetme", meetings_path(:receiver_id => u), :method => :post %></td><br>
       	</tr>
 <% end %>
 

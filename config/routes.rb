@@ -1,17 +1,6 @@
 Rails.application.routes.draw do
 
-
-  get 'meetings/index'
-
-  get 'meetings/show'
-
-  get 'meetings/create'
-
-  get 'meetings/edit'
-
-  get 'meetings/update'
-
-  get 'meetings/destroy'
+resources :meetings
 
   resources :invites do
     resources :messages

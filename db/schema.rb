@@ -44,16 +44,6 @@ ActiveRecord::Schema.define(version: 20150713023309) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "meetmes", force: :cascade do |t|
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "meetmes", ["recipient_id"], name: "index_meetmes_on_recipient_id", using: :btree
-  add_index "meetmes", ["sender_id"], name: "index_meetmes_on_sender_id", using: :btree
-
   create_table "messages", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
