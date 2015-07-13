@@ -1,6 +1,6 @@
-class CreateInvitations < ActiveRecord::Migration
+class CreateEmailInvitations < ActiveRecord::Migration
   def change
-    create_table :invitations do |t|
+    create_table :email_invitations do |t|
       t.integer :sender_id
       t.string :recipient_email
       t.string :token
