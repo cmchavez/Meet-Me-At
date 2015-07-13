@@ -41,6 +41,8 @@ gem 'paperclip', '~> 4.1'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 
+gem 'faker'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -28,7 +28,7 @@ Hello <%= current_user.firstname%><br>
 <h2> You have <%= current_user.meetings.count + current_user.inverse_meetings.count%> meetings</h2>
 	<div>
 	<% for meeting in current_user.meetings %>
-	Send to : <%= meeting.receiver.firstname%>
+	Send to : <%= meeting.receiver.firstname%>(<%=meeting.receiver.email%>)
 	<h4><%= meeting.name %></h4>
 	<p> Where - <%= meeting.location %><br></p>
 	<p> When - <%= meeting.date %><br></p>
@@ -43,7 +43,7 @@ Hello <%= current_user.firstname%><br>
 <div>
 <ul>
 	<% for inverse_meeting in current_user.inverse_meetings %>
-		<h4><%= inverse_meeting.name%></h4><br>
+		<h4><%= inverse_meeting.name%>(<%=inverse_meeting.email%></h4><br>
 		<p>Where - <%= inverse_meeting.location%></p><br>
 		<p>When  - <%= inverse_meeting.date%></p><br>
 		<p>Detail - <%= inverse_meeting.description%></p><br>

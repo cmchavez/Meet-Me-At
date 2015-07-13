@@ -15,7 +15,7 @@
 </head>
 <body>
 <%if current_user %>
-<h3>Hello <%= current_user.email%></h3>
+<h3>Hello <%= current_user.firstname%></h3>
 <%= link_to "my profile", user_path(current_user)%>
 <%= link_to "All Users", users_path%>
 <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>

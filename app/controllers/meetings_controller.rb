@@ -38,6 +38,6 @@ class MeetingsController < ApplicationController
 
   private 
   def meeting_params
-  params.require(:meeting).permit(:name, :location, :time, :description)
+  params.require(:meeting).permit(:name, :location, :date, :description)
   end 
 end
