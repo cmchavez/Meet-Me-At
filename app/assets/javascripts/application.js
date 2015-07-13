@@ -10,15 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap-sprockets
 //= require jquery2
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require users
 //= require chat
 //= require turbolinks
 //= require_tree .
 //= require private_pub
-
 
 var ready = function () {
  
@@ -90,3 +89,8 @@ var ready = function () {
  
 $(document).ready(ready);
 $(document).on("page:load", ready);
+
+
+
+
+
