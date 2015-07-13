@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'invitations/new'
+
+  get 'invitations/create'
+
   resources :meetings
   resources :friendships
 
