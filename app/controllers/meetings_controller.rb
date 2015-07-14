@@ -1,6 +1,6 @@
 class MeetingsController < ApplicationController
   def index
-    @meetings = Meeting.all
+    @meetings = current_user.meetings.all
     respond_to do |format|
       format.html {
         render
@@ -16,7 +16,7 @@ class MeetingsController < ApplicationController
   end
 
   def show
-    @meeting = Meeting.find(params[:id])
+    @meeting = current_user.meetings.find(params[:id])
     respond_to do |format|
       format.html {
           render
