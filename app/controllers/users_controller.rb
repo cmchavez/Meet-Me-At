@@ -5,17 +5,22 @@ class UsersController < ApplicationController
 
   def show
 	@user = User.find(params[:id])
+      @total_meetings = []
 	@inverse_meetings = current_user.inverse_meetings.all
+      @inverse_meetings.each do |inverse|
+        @total_meetings <<inverse
+      end 
 	@meetings = current_user.meetings.all
+      @meetings.each do |a|
+        @total_meetings << a
+      end 
+
 	respond_to do |format|
         		format.html {
             	render :show
         	}
         	format.json {
-            render :json => {
-            	:meeting => @meetings,
-            	:inverse_meeting => @inverse_meetings
-            	}
+            render json: @total_meetings
         	}
 
 

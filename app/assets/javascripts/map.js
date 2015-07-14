@@ -109,20 +109,36 @@ function initialize() {
 
         var comb_promises = geo_promises.concat(geo_inverses)
 
-        // console.log(comb_promises)
+        console.log(comb_promises)
+
+        // var mapProps = {
+        //     zoom: 16,
+        //     maxZoom: 18,
+        //     mapTypeId: google.maps.MapTypeId.ROADMAP
+        // }
+        // var map = new google.maps.Map(el, mapProps)
+        // var bounds = new google.maps.LatLngBounds()
+        // var infowindow = new google.maps.InfoWindow({
+        // });
+
+        // var markers = []
+
+        // for (i=0; i<)
 
 
         // Dispatch the promises
         Promise.all(comb_promises).then(function(promise_results){
-            // console.log("#9")
-            // Create a map
+            console.log("#9")
+            //Create a map
             var mapProps = {
+                zoom: 16,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
 
             var map = new google.maps.Map(el, mapProps)
              // Bounds are cool because they center our map for us
-            var bounds = new google.maps.LatLngBounds()
+            var bounds = new google.maps.LatLngBounds(
+                )
             
             // Track an array of our markers
             var markers = []
@@ -145,51 +161,51 @@ function initialize() {
                     animation: google.maps.Animation.DROP
                 })
                 marker.setMap(map)
-                markers.push(marker)
-
+                markers.push(marker)    
+                var abc = "1"
                 // Add the coordinates to the bounds (so we can center the map)
                 bounds.extend(coord)
                  // Create an info window
                 var infowindow = new google.maps.InfoWindow({
-                    content: "will be fixed soon"
+                    content: abc
                 })
 
                 // Open it above the marker
                 infowindow.open(map, markers[i])
             }
 
-                //Create an info window
+            //     //Create an info window
 
-            //     for (var i = 0; i < results.meeting.length; i++){
-            //     var infowindow = new google.maps.InfoWindow({
-            //         content: "<h1>" + results.meeting[i].name+ "</h1>" +results.meeting[i].location
-            //     })
+            // //     for (var i = 0; i < results.meeting.length; i++){
+            // //     var infowindow = new google.maps.InfoWindow({
+            // //         content: "<h1>" + results.meeting[i].name+ "</h1>" +results.meeting[i].location
+            // //     })
 
-            //      google.maps.event.addListener(marker, 'mouseover', function() {
-            //          infowindow.open(map, marker);
-            //     });
+            // //      google.maps.event.addListener(marker, 'mouseover', function() {
+            // //          infowindow.open(map, marker);
+            // //     });
 
-            //         google.maps.event.addListener(marker, 'mouseout', function() {
-            //         infowindow.close(map, marker);
-            //     });
-            // }
+            // //         google.maps.event.addListener(marker, 'mouseout', function() {
+            // //         infowindow.close(map, marker);
+            // //     });
+            // // }
 
-            //     for (var i = 0; i < results.inverse_meeting.length; i++)
-            //         var infowindow1 = new google.maps.InfoWindow({
-            //             content: "<h1>" + results.inverse_meeting[i].name+ "</h1>" +results.inverse_meeting[i].location
-            //         })
-            //     google.maps.event.addListener(marker, 'mouseover', function() {
-            //          infowindow.open(map, marker);
-            //     });
+            // //     for (var i = 0; i < results.inverse_meeting.length; i++)
+            // //         var infowindow1 = new google.maps.InfoWindow({
+            // //             content: "<h1>" + results.inverse_meeting[i].name+ "</h1>" +results.inverse_meeting[i].location
+            // //         })
+            // //     google.maps.event.addListener(marker, 'mouseover', function() {
+            // //          infowindow.open(map, marker);
+            // //     });
 
-            //         google.maps.event.addListener(marker, 'mouseout', function() {
-            //         infowindow.close(map, marker);
-            //     });
+            // //         google.maps.event.addListener(marker, 'mouseout', function() {
+            // //         infowindow.close(map, marker);
+            // //     });
 
-            // }
+            // // }
 
 
-            // Center and fit the map using the bounds
+            // // Center and fit the map using the bounds
 
             if (promise_results.length > 1) {
                 map.fitBounds(bounds);
