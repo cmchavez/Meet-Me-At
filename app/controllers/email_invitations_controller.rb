@@ -4,20 +4,22 @@ class EmailInvitationsController < ApplicationController
   end
 
   def create
-  	@emailinvitation = EmailInvitation.new(params[:invitation])
+  	@emailinvitation = EmailInvitation.new(emailinvitation_params)
  	@emailinvitation.sender = current_user
   		if @emailinvitation.save
-		      Mailer.deliver_invitation(@emailinvitation, signup_url(@emailinvitation.token))
+		      Mailer.emailinvitation(@emailinvitation, new_user_path(@emailinvitation.token))
 		      flash[:notice] = "Thank you, invitation sent."
-		      redirect_to projects_url
-		    else
-		      flash[:notice] = "Thank you, we will notify when we are ready."
-		      redirect_to root_url
-    		end
+		      redirect_to users_path
   		else
     		render :action => 'new'
+    	end 
     	
   end
+
+  private
+	def emailinvitation_params
+		params.require(:email_invitation).permit(:sender_id, :recipient_email, :token, :sent_at)
+	end
 
 
 end
