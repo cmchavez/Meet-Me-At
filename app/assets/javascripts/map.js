@@ -189,7 +189,7 @@ function initialize() {
             // }
 
 
-            // Center and fit the map using the bounds
+            //Center and fit the map using the bounds
 
             if (promise_results.length > 1) {
                 map.fitBounds(bounds);
