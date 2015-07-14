@@ -7,7 +7,7 @@ class EmailInvitationsController < ApplicationController
   	@emailinvitation = EmailInvitation.new(emailinvitation_params)
  	@emailinvitation.sender = current_user
   		if @emailinvitation.save
-		      Mailer.emailinvitation(@emailinvitation, new_user_path(@emailinvitation.token))
+		      Mailer.emailinvitation(@emailinvitation, users_path(@emailinvitation.token))
 		      flash[:notice] = "Thank you, invitation sent."
 		      redirect_to users_path
   		else

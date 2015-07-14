@@ -36,9 +36,18 @@ def self.from_omniauth(auth)
     end
   end
 
+def emailinvitation_token
+  emailinvitation.token if emailinvitation
+end 
+
+def emailinvitation_token=(token)
+  self.emailinvitation = EmailInvitation.find_by_token(token)
+
+end 
+
 private 
   def set_invitation_limit
-    self.invitation_limit = 10
+    self.invitation_limit = 20
   end
 
 end

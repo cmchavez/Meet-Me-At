@@ -5,11 +5,12 @@ class Mailer < ApplicationMailer
   #
   #   en.mailer.invitation.subject
   #
-  def emailinvitation(emailinvitation, new_user_registration_path)
+  def emailinvitation(emailinvitation, new_user_path)
     subject 'Invitation'
     recipients emailinvitation.recipient_mail
-    from 'meetme@example.com'
-    body :invitation => invitation, :new_user_registration_path => new_user_registration_path
+    from 'meetmeatthisplace2015@gmail.com'
+    body :invitation => invitation, :new_user_path => new_user_path
     invitation.update_attribute(:sent_at, Time.now)
   end
+
 end
