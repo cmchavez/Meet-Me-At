@@ -5,13 +5,30 @@ class UsersController < ApplicationController
 	  @user.email = @user.emailinvitation.recipient_email if @user.emailinvitation
 	end
 
-  	def index
-  		@users = User.all
-  	end
-
-  	def show
-		@user = User.find(params[:id])
-  	end
-
+  def index
+  	@users = User.all
+  end
   	
+  def show
+	@user = User.find(params[:id])
+      @total_meetings = []
+	@inverse_meetings = current_user.inverse_meetings.all
+      @inverse_meetings.each do |inverse|
+        @total_meetings <<inverse
+      end 
+	@meetings = current_user.meetings.all
+      @meetings.each do |a|
+        @total_meetings << a
+      end 
+
+	respond_to do |format|
+        		format.html {
+            	render :show
+        	}
+        	format.json {
+            render json: @total_meetings
+        	}
+      end
+  end
+
 end
