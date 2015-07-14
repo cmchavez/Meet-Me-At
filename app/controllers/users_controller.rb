@@ -12,8 +12,12 @@ class UsersController < ApplicationController
             	render :show
         	}
         	format.json {
-            render json: @meetings
+            render :json => {
+            	:meeting => @meetings,
+            	:inverse_meeting => @inverse_meetings
+            	}
         	}
+
 
       	end
   end

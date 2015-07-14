@@ -56,41 +56,65 @@ function initialize() {
     var el = document.getElementById('map-canvas')
 
     // Bail out if there's not an address map on the page
-    if(!el) return
+    // if(!el) return
     // Get an instance of the geocoder
     var geocoder = new google.maps.Geocoder()
     
     // Get the page's marker data from the JSON API
     var url = window.location.origin + window.location.pathname + ".json"+ window.location.search
      // Ajax the data URL (this retrieves the contents of that JSON url above)
-
+        // console.log(url + "#1")
 
        $.get(url, function(results){
         // Wrap the data in an array if it's not one already    
-        if(!(results instanceof Array)) results = [results]
-            console.log(results[0].location)
+            if(!(results instanceof Object)) results = [results]
+            // console.log(results.meeting[0].location+"#2")
         // Perform geocoding for all addresses using promises to coordinate the results
-        var geo_promises = []
+            var geo_promises = []
 
         //Geocode each address to be displayed
         //Realistically, this should be done in the Model when data is saved
-        for(var i = 0; i < results.length; i++){
-            console.log(results.length)
+            for(var i = 0; i < results.meeting.length; i++){
+            // console.log(results.meeting.length + "#3")
 
             // This creates promises using the jQuery Deferred library
-            var promise = $.Deferred(function(deferred){
-                console.log(results[i].location)
-                geocoder.geocode({'address': results[i].location}, function(geo_results, status){
-                    deferred.resolve(geo_results)
+                var promise = $.Deferred(function(deferred){
+                    // console.log(results.meeting[i].location + "#4")
+                    geocoder.geocode({'address': results.meeting[i].location}, function(geo_results, status){
+                        deferred.resolve(geo_results)
+                    })
                 })
-            })
-            geo_promises.push(promise)
-            console.log(geo_promises)
-        }
+                geo_promises.push(promise)
+                // console.log(geo_promises + "#5")
+            }
 
-       // Dispatch the promises
-        Promise.all(geo_promises).then(function(promise_results){
-            console.log("3")
+            var geo_inverses = []
+
+            for (var i = 0; i < results.inverse_meeting.length; i++){
+            
+                // console.log(results.inverse_meeting.length + "#6")
+
+                var inverse_premise = $.Deferred(function(deferred){
+                    // console.log(results.inverse_meeting[i].location + "#7")
+            
+                    geocoder.geocode({'address': results.inverse_meeting[i].location}, function(
+                        geo_results, status){
+                        deferred.resolve(geo_results)
+                    })
+                })
+            
+                geo_inverses.push(inverse_premise)
+                // console.log(geo_inverses + "#8")
+            }
+
+        var comb_promises = geo_promises.concat(geo_inverses)
+
+        // console.log(comb_promises)
+
+
+        // Dispatch the promises
+        Promise.all(comb_promises).then(function(promise_results){
+            // console.log("#9")
             // Create a map
             var mapProps = {
                 mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -105,13 +129,16 @@ function initialize() {
 
             // Loop over the promise results
             for(var i = 0; i < promise_results.length; i++){
-                console.log("for loop 2")
+                console.log(promise_results.length + "#10")
 
                 var  promise_result = promise_results[i][0]
-                console.log(promise_result)
+                console.log(promise_results[i][0]+ "#11")
+
+                console.log(promise_result.geometry.location)
 
                 // result now represents a single geocoded address
                 var coord = promise_result.geometry.location
+                console.log(coord + "#12")
 
                 // Create and place a marker
                 var marker = new google.maps.Marker({position: coord,
@@ -122,22 +149,45 @@ function initialize() {
 
                 // Add the coordinates to the bounds (so we can center the map)
                 bounds.extend(coord)
-
-                // Create an info window
+                 // Create an info window
                 var infowindow = new google.maps.InfoWindow({
-                    content: "<h1>" + results[i].name+ "</h1>" + results[i].location
+                    content: "will be fixed soon"
                 })
 
-                    google.maps.event.addListener(marker, 'mouseover', function() {
-                     infowindow.open(map, marker);
-                });
-
-                google.maps.event.addListener(marker, 'mouseout', function() {
-                infowindow.close(map, marker);
-                });
-              
-
+                // Open it above the marker
+                infowindow.open(map, markers[i])
             }
+
+                //Create an info window
+
+            //     for (var i = 0; i < results.meeting.length; i++){
+            //     var infowindow = new google.maps.InfoWindow({
+            //         content: "<h1>" + results.meeting[i].name+ "</h1>" +results.meeting[i].location
+            //     })
+
+            //      google.maps.event.addListener(marker, 'mouseover', function() {
+            //          infowindow.open(map, marker);
+            //     });
+
+            //         google.maps.event.addListener(marker, 'mouseout', function() {
+            //         infowindow.close(map, marker);
+            //     });
+            // }
+
+            //     for (var i = 0; i < results.inverse_meeting.length; i++)
+            //         var infowindow1 = new google.maps.InfoWindow({
+            //             content: "<h1>" + results.inverse_meeting[i].name+ "</h1>" +results.inverse_meeting[i].location
+            //         })
+            //     google.maps.event.addListener(marker, 'mouseover', function() {
+            //          infowindow.open(map, marker);
+            //     });
+
+            //         google.maps.event.addListener(marker, 'mouseout', function() {
+            //         infowindow.close(map, marker);
+            //     });
+
+            // }
+
 
             // Center and fit the map using the bounds
 
@@ -146,12 +196,11 @@ function initialize() {
             }
             else{
                 map.setCenter(bounds.getCenter());
-                map.setZoom(4);
+                map.setZoom(10);
             }
 
 
-        })
-       
+       })
      
    })
    
