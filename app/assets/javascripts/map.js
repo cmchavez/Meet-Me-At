@@ -7,7 +7,6 @@ $(document).on("page:load", initialize);
 function initialize() {
 
     //setting latlng for santa monica and set it as a variable to user as a center point for mapOptions variable
-     //setting latlng for santa monica and set it as a variable to user as a center point for mapOptions variable
     var santamonica = new google.maps.LatLng(34.024212,-118.496475);
     var mapOptions = {
         zoom: 10,
@@ -115,7 +114,9 @@ function initialize() {
                 var coord = promise_result.geometry.location
 
                 // Create and place a marker
-                var marker = new google.maps.Marker({position: coord})
+                var marker = new google.maps.Marker({position: coord,
+                    animation: google.maps.Animation.DROP
+                })
                 marker.setMap(map)
                 markers.push(marker)
 

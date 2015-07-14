@@ -22,7 +22,7 @@ class MeetingsController < ApplicationController
           render
       }
       format.json {
-          render json: @map
+          render json: @meeting
       }
   end
   end 
