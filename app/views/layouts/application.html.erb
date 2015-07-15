@@ -1,4 +1,6 @@
+<div class="welcome">
 <!DOCTYPE html>
+
 <html>
 <head>
 <title>Meet-Me@</title>
@@ -15,15 +17,17 @@
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js">
     </script>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<%if current_user %>
-<h3>Hello <%= current_user.firstname%></h3>
-<%= link_to "my profile", user_path(current_user)%>
-<%= link_to "All Users", users_path%>
-<%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
-<% end %>
-<hr>
+
+  <%if current_user %>
+  <h3>Hello <%= current_user.firstname%></h3>
+    <%= link_to "my profile", user_path(current_user)%>
+    <%= link_to "All Users", users_path%>
+    <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
+    <% end %>
+  <hr>
 
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -32,8 +36,9 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 <%= yield %>
+<%= params.inspect %>
 
 
-
+</div>
 </body>
 </html>

@@ -45,9 +45,5 @@ def emailinvitation_token=(token)
 
 end 
 
-private 
-  def set_invitation_limit
-    self.invitation_limit = 20
-  end
 
 end
