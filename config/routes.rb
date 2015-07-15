@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :friendships
   # resources :searches
 
+  get "searches" => "searches#index", as: :searches
   get "searches/new" => "searches#new", as: :new_search
   get "searches/show" => "searches#show", as: :show_search
 
