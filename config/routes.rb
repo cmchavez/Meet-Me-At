@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :email_invitations
   resources :meetings
   resources :friendships
-  # resources :users
+  resources :searches
 
 
 
