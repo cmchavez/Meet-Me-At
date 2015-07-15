@@ -13,16 +13,29 @@ class SearchesController < ApplicationController
 	end
 
 	def show
-		@search = Search.find(params[:id])
-		espond_to do |format|
+		response = Meetupapi.find(params[:name], params[:zipcode])
+
+		@results = response["results"] 
+		respond_to do |format|
 			format.html {
 				render
 			}
 			format.json {
-				render json: @search
+				render json: @results
 			}
 		end
 	end 
+
+	def new
+		@search = Search.new
+	end 
+
+	# def create 
+	# 	@search = Search.new(params.require(:search).permit(:name, :zipcode))
+	# 	@search.save
+	# 	redirect_to root_url
+	# end
+
 
 
 end

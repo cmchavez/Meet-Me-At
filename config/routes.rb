@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :email_invitations
   resources :meetings
   resources :friendships
-  resources :searches
+  # resources :searches
+
+  get "searches/new" => "searches#new", as: :new_search
+  get "searches/show" => "searches#show", as: :show_search
 
 
 
