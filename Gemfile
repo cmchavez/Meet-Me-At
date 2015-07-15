@@ -42,6 +42,8 @@ gem 'paperclip', '~> 4.1'
 gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'faker'
+#to grab api data
+gem 'httparty', '~> 0.11.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
