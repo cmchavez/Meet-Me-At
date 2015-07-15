@@ -12,9 +12,22 @@ class SearchesController < ApplicationController
 		end
 	end
 
-	def show
-		response = Meetupapi.find(params[:name], params[:zipcode])
+	# def show
+	# 	response = Meetupapi.find(params[:name], params[:zipcode])
 
+	# 	@results = response["results"] 
+	# 	respond_to do |format|
+	# 		format.html {
+	# 			render
+	# 		}
+	# 		format.json {
+	# 			render json: @results
+	# 		}
+	# 	end
+	# end 
+
+	def new
+		response = Meetupapi.find(params[:name], params[:zipcode])
 		@results = response["results"] 
 		respond_to do |format|
 			format.html {
@@ -24,10 +37,6 @@ class SearchesController < ApplicationController
 				render json: @results
 			}
 		end
-	end 
-
-	def new
-		@search = Search.new
 	end 
 
 	# def create 
