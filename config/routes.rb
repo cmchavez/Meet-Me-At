@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'email_invitations/new'
 
+  get 'email_invitations/create'
+
+  resources :email_invitations
   resources :meetings
   resources :friendships
+  # resources :users
 
 
 

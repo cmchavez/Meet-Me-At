@@ -1,0 +1,17 @@
+<h1>Invite a Friend</h1>
+
+<% if current_user.invitation_limit > 0 %>
+		<p>	
+			<%= link_to "Send Invitation", email_invitations_create_path %>
+			(<%= current_user.invitation_limit %> left )
+		</p>
+	<% end%>
+<%= form_for(@emailinvitation) do |f| %>
+	<p>
+		<%= f.label :recipient_email, "Friend's Email Address:" %><br>
+		<%= f.text_field :recipient_email %>
+	</p>
+
+	<p><%= f.submit "Invite Now!" %></p>
+
+<% end %>

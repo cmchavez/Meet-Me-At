@@ -19,6 +19,11 @@ class User < ActiveRecord::Base
 	has_attached_file :image, :styles => { small: "64x64", med: "100x100", large: "200x200" }, :default_url =>"robot.png"
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
+    has_many :sent_invitations, :class_name => 'Invitation', :foreign_key => 'sender_id'
+    belongs_to :invitation
+
+    before_create :set_invitation_limit
+
 def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email
@@ -29,6 +34,20 @@ def self.from_omniauth(auth)
     user.image = auth.info.image
     
     end
+  end
+
+def emailinvitation_token
+  emailinvitation.token if emailinvitation
+end 
+
+def emailinvitation_token=(token)
+  self.emailinvitation = EmailInvitation.find_by_token(token)
+
+end 
+
+private 
+  def set_invitation_limit
+    self.invitation_limit = 20
   end
 
 end
