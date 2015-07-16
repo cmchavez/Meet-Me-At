@@ -28,14 +28,8 @@ class SearchesController < ApplicationController
 	# end 
 
 	def new
-		#raise @meeting.inspect
-		# @meeting = current_user.meetings.build
-		
-		
-	end 
-
-
-
+		@users = User.all
+	end
 
 
 end

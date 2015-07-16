@@ -1,13 +1,17 @@
 <%= form_tag "/meetings", method: :post do %>
-
-<p> Event name: <p>
+<h4>Friend</h4>
+<p><%= select_tag :receiver_id, options_from_collection_for_select(@users, "lastname", "firstname", "user_id")%></p>
+<h4> Event name: <h4>
 <p><%= text_field_tag "meeting[name]", params[:name] %></p><br>
-<p>Location</p>
+<h4>Location</h4>
 <p><%= text_field_tag "meeting[location]", params[:location]%></p><br>
-<p>Description</p> 	 	
+<h4>Description</h4> 	 	
 <p><%= text_field_tag "meeting[description]", params[:description] %></p><br>
 <p><%= submit_tag"Add to meetme@"%></p>
 <% end %>
+
+
+
 
 
 
