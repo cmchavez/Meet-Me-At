@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
   	
   def show
-	@user = User.find(params[:id])
+	@user = current_user
       @total_meetings = []
 	@inverse_meetings = current_user.inverse_meetings.all
       @inverse_meetings.each do |inverse|
