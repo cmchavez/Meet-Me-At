@@ -1,7 +1,14 @@
 <div class="signin">
-<h2>Log in</h2>
+  <div id="logo"> 
+  </div>
+<div class="fillout">
+<h2>Welcome!</h2>
+
+<h3>Please Sign In</h3>
+</div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -21,7 +28,10 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+  <button type="submit" class="btn btn-primary">
+  <i class="icon-user icon-white"></i> Sign in
+  </button>
+    <%#= f.submit "Log in",  %>
   </div>
 <% end %>
 

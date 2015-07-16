@@ -11,19 +11,42 @@ padding: 0;
 }
 
 .welcome {
-margin-top: 0px;
+margin-top: -50px;
+margin-bottom: 0px;
 font-family: 'Josefin Sans', sans-serif;
 font-size: 20px;
+font-color: white;
 text-align: center;
-background-image: url("logo1.png");
+background-image: url("background2.jpg");
 background-attachment: fixed;
+background-size: cover;
 height:100%
 }
 
 .signin {
-margin-top: 100px;
+margin-top: 50px;
+font-color: black;
 }
 
 .invite {
 text-align: right;
+}
+
+.fillout {
+font-color: white;
+margin-top: 0px;
+/*background-color: white;
+margin-right: 475px;
+margin-left: 475px;*/
+}
+
+#logo {
+background-image: url("logo2.png");
+background-repeat: no-repeat;
+background-position: center;
+min-height: 400px;
+margin-top: -75px;
+}
+#profile {
+	background-color: 
 }
