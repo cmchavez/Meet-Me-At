@@ -49,9 +49,6 @@ def self.all_except(user)
   where.not(id: user)
 end
 
-private 
-  def set_invitation_limit
-    self.invitation_limit = 20
-  end
+
 
 end

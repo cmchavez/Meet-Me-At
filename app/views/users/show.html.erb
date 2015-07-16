@@ -1,10 +1,12 @@
+
 <p id="notice"><%= notice %></p>
 
 Hello <%= current_user.firstname%><br>
-<%= current_user.email %><br>
+<%#= current_user.email %>
 <%= current_user.firstname %><br>
 <%= current_user.lastname %><br>
 <%= image_tag current_user.image%><br>
+
 
 <h2>Your Friends</h2>
 <ul>
@@ -15,12 +17,14 @@ Hello <%= current_user.firstname%><br>
 		</li>
 	<% end %>
 </ul>
+
 	<h2>Friended by Users</h2>
 		<ul>
 			<% for user in current_user.inverse_friends %>
 				<li><%= user.firstname %></li>
 			<% end %>
 		</ul>
+
 <% if current_user.invitation%>
 <% if current_user.invitation_limit > 0 %>
 	<p> 	
@@ -29,6 +33,13 @@ Hello <%= current_user.firstname%><br>
 	</p> 
 <% end%>
 <% end %>
+
+
+	<p class="invite">	
+		<%= link_to "Invite a Friend!", new_email_invitation_path %>
+	</p>
+</div>	
+
 
 
 <h2> You have <%= current_user.meetings.count + current_user.inverse_meetings.count%> meetings</h2>
