@@ -8,13 +8,13 @@ Hello <%= current_user.firstname %><br>
 
 <div class="contactlist" %>
 	<h4> You have <%=@total_friends.count %> contacts</h4>
-	<%= link_to "All Contacts", friendships_path%><br>
+	<%= link_to "All Contacts", friendships_path(current_user)%><br>
 	<%= link_to "Add New Contact", new_friendship_path %><br>
 </div>	
 
 <div class="meetme">
 	<h4> You have <%= @total_meetings.count %> meetme@</h4>
-	<%= link_to "See all meetmees", meeting_path%><br>
+	<%= link_to "See all meetmees", meetings_path%><br>
 	<%= link_to "Add new meetme@", new_meeting_path %><br>
 </div>
 
