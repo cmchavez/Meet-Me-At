@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20150715051255) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
+  add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
+
   create_table "email_invitations", force: :cascade do |t|
     t.integer  "sender_id"
     t.string   "recipient_email"
@@ -30,6 +40,15 @@ ActiveRecord::Schema.define(version: 20150715051255) do
     t.integer  "friend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.string   "recipient_email"
+    t.string   "token"
+    t.datetime "sent_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "invites", force: :cascade do |t|
@@ -52,6 +71,16 @@ ActiveRecord::Schema.define(version: 20150715051255) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "meetmes", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "meetmes", ["recipient_id"], name: "index_meetmes_on_recipient_id", using: :btree
+  add_index "meetmes", ["sender_id"], name: "index_meetmes_on_sender_id", using: :btree
 
   create_table "meetupapis", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -103,6 +132,8 @@ ActiveRecord::Schema.define(version: 20150715051255) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "invitation_id"
+    t.integer  "invitation_limit"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

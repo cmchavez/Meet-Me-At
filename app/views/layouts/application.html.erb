@@ -37,7 +37,9 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+
 <div class="container">
+<%= params.inspect %>
   <%= yield %>
 </div>
 
