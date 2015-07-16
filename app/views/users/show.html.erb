@@ -1,13 +1,13 @@
 
 <p id="notice"><%= notice %></p>
-
-Hello <%= current_user.firstname%><br>
-<%#= current_user.email %>
-<%= current_user.firstname %><br>
-<%= current_user.lastname %><br>
+<div class="userprofile">
 <%= image_tag current_user.image%><br>
+Hello <%= current_user.firstname %><br>
+</div>
 
 
+<div class="contactlist" %>
+<%= link_to "Contacts", friendships_path%>
 <h2>Your Friends</h2>
 <ul>
 	<% for friendship in current_user.friendships %>
@@ -24,6 +24,7 @@ Hello <%= current_user.firstname%><br>
 				<li><%= user.firstname %></li>
 			<% end %>
 		</ul>
+</div>
 
 <% if current_user.invitation%>
 <% if current_user.invitation_limit > 0 %>
