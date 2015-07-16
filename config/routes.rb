@@ -13,6 +13,16 @@ Rails.application.routes.draw do
   get "searches/show" => "searches#show", as: :show_search
 
 
+  # get "meetings" => "meetings#index", as: :meetings
+  # get "meetings/new" => "meetings#new", as: :new_meeting
+  # post "meetings/new" => "meetings#create", as: :create_meeting
+  # get "meetings/id" => "meetings#show", as: :show_meething
+  # get "/meetings/:id/edit" => "meetings#edit", as: :edit_meeting
+  
+  # patch "meetings/show" => "meetings#update", as: :update_meeting
+  # delete "meeting/:id" => "meetings#destroy", as: :destroy_meeting
+
+
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
 

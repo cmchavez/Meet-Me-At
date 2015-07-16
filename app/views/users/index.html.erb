@@ -9,7 +9,9 @@
 
       		</td><br>
       		<td><%= link_to "Add Friend", friendships_path(:friend_id => u), :method => :post %></td><br>
-      		<td><%= link_to "Add a Meetme", meetings_path(:receiver_id => u), :method => :post %></td><br>
+      		<td><%= link_to "Add a Meetme", new_meeting_path(:params =>{:receiver_id => u})%></td><br>
+
+
       	</tr>
 <% end %>
 

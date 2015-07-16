@@ -34,7 +34,9 @@ Hello <%= current_user.firstname%><br>
 <h2> You have <%= current_user.meetings.count + current_user.inverse_meetings.count%> meetings</h2>
 	<div>
 	<% for meeting in current_user.meetings %>
+	<% if meeting.receiver%>
 	Send to : <%= meeting.receiver.firstname%>(<%=meeting.receiver.email%>)
+	<% end%>
 	<h4><%= meeting.name %></h4>
 	<p> Where - <%= meeting.location %><br></p>
 	<p> When - <%= meeting.date %><br></p>

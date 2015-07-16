@@ -1,10 +1,11 @@
 <%= form_for @meeting do |m| %>
+	<p><%= m.hidden_field :receiver_id, :value => params[:receiver_id] %>
 	<p>Meeting Name</p>
-	<p><%= m.text_field :name%></p><br>
+	<p><%= m.text_field :name %></p><br>
 	<p>Meeting Location</p>
 	<p><%= m.text_field :location%></p><br>
 	<p>Meeting time</p>
-	<p><%= m.datetime_select :date%></p><br>
+	<p><%= m.date_select :date%></p><br>
 	<p>Meeting description</p>
 	<p><%= m.text_field :description%></p><br>
 	

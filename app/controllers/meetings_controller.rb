@@ -11,11 +11,7 @@ class MeetingsController < ApplicationController
     end
   end
 
-  def new
-    @meeting = Meeting.new
-  end
-
-  def show
+    def show
     @meeting = current_user.meetings.find(params[:id])
     respond_to do |format|
       format.html {
@@ -27,8 +23,14 @@ class MeetingsController < ApplicationController
   end
   end 
 
+  def new
+    @meeting = current_user.meetings.build
+  end
+
+
+
   def create
-    @meeting = current_user.meetings.build(:receiver_id => params[:receiver_id])
+    @meeting = current_user.meetings.build(meeting_params)
     respond_to do |format|
       if @meeting.save
         format.html { redirect_to root_url, notice: 'meeting successfully created.' }
@@ -69,6 +71,7 @@ class MeetingsController < ApplicationController
 
   private 
     def meeting_params
-      params.require(:meeting).permit(:name, :location, :date, :description)
+      params.require(:meeting).permit(:name, :location, :date, :description, :user_id, :receiver_id)
     end 
+
 end

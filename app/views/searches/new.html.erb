@@ -1,28 +1,13 @@
-<%= form_tag new_search_path, method: :get do %>
-<p> Event <p>
-<p><%= text_field_tag :name%></p><br>
-<p>Zipcode</p>
-<p><%= text_field_tag :zipcode%></p><br>
-<p><%= submit_tag"Search" %></p>
+<%= form_tag "meetings/" method: :post do %>
+
+<p> Event name: <p>
+<p><%= text_field_tag :name, params[:name] %></p><br>
+<p>Location</p>
+<p><%= text_field_tag :location, params[:location]%></p><br>
+<p>Description</p>
+<p><%= text_field_tag :description, params[:description] %></p><br>
+<p><%= submit_tag"Add to meetme@"%></p>
 <% end %>
 
-<% if @results %>
 
-<h3>There are <strong><%=@results.length%></strong> near this area</h3>
-<%@results.each do |r|%>
-	<% if r["venue"]%>
-	<ul><h4><%= r["name"]%></h4>
-	Address: <%= r["venue"]["address_1"]%>,<%= r["venue"]["city"]%>,<%= r["venue"]["zip"]%>,<%= r["venue"]["state"]%><br>
 
-	Link to detail: <%= r["event_url"]%><br>
-	<%= link_to "Add this to your Meetme@", "#"%>
-
-		<% end %>
-	</ul>
-
-	
-<%end %>
-<% else %>
-<h3> There is no events near your area</h3>
-
-<% end %>
