@@ -20,15 +20,16 @@
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+<div class="profile">
   <%if current_user %>
-  <h3>Hello <%= current_user.firstname%></h3>
-    <%= link_to "my profile", user_path(current_user)%>
-    <%= link_to "All Users", users_path%>
-    <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
-    <% end %>
-  <hr>
 
+  <h3>Hello <%= current_user.firstname%></h3>
+    <%= link_to "View My Profile", user_path(current_user)%>|
+    <%= link_to "All Users", users_path%>|
+    <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %>
+    <% end %>
+    <hr>
+</div>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
