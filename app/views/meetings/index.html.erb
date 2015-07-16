@@ -1,8 +1,29 @@
-<h1> You have Meetings</h1>
-<% @meetings.each do |m| %>
-	<%= m.name %>
-	<%= m.location %>
-	<%= m.time %>
-	<%= m.description %>
-<% end %>
+<h2> You have <%= current_user.meetings.count + current_user.inverse_meetings.count%> meetings</h2>
+	<div>
+	<% for meeting in current_user.meetings %>
+	<% if meeting.receiver%>
+	Send to : <%= meeting.receiver.firstname%>(<%=meeting.receiver.email%>)
+	<% end%>
+	<h4><%= meeting.name %></h4>
+	<p> Where - <%= meeting.location %><br></p>
+	<p> When - <%= meeting.date %><br></p>
+	<p> Detail <%= meeting.description %><br></p>
+	<%= link_to "remove", meeting, :method => :delete %>
+	<%= link_to "Edit", edit_meeting_path(meeting) %>
+	<%end%>
 	
+	</div>
+
+<h2> Others</h2>
+<div>
+<ul>
+	<% for inverse_meeting in current_user.inverse_meetings %>
+		<h4><%= inverse_meeting.name%> <%=inverse_meeting.receiver.email%></h4><br>
+		<p>Where - <%= inverse_meeting.location%></p>
+		<p>When  - <%= inverse_meeting.date%></p>
+		<p>Detail - <%= inverse_meeting.description%></p>
+		<p>Send by:<%= inverse_meeting.user.email %></p>
+	<% end %>
+</ul>
+</div>
+<div id="map-canvas"></div>

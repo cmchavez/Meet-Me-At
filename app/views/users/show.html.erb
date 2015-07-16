@@ -1,76 +1,23 @@
 
 <p id="notice"><%= notice %></p>
-
-Hello <%= current_user.firstname%><br>
-<%#= current_user.email %>
-<%= current_user.firstname %><br>
-<%= current_user.lastname %><br>
+<div class="userprofile">
 <%= image_tag current_user.image%><br>
+Hello <%= current_user.firstname %><br>
+</div>
 
 
-<h2>Your Friends</h2>
-<ul>
-	<% for friendship in current_user.friendships %>
-		<li>
-		  	<%= friendship.friend.firstname %>
-		  	<%= link_to "remove", friendship, :method => :delete %>
-		</li>
-	<% end %>
-</ul>
-
-	<h2>Friended by Users</h2>
-		<ul>
-			<% for user in current_user.inverse_friends %>
-				<li><%= user.firstname %></li>
-			<% end %>
-		</ul>
-
-<% if current_user.invitation%>
-<% if current_user.invitation_limit > 0 %>
-	<p> 	
-		<%= link_to "Invite a Friend!", new_email_invitation_path %>
-			(<%= current_user.invitation_limit %> left )
-	</p> 
-<% end%>
-<% end %>
-
-
-	<p class="invite">	
-		<%= link_to "Invite a Friend!", new_email_invitation_path %>
-	</p>
+<div class="contactlist" %>
+	<h4> You have <%=@total_friends.count %> contacts</h4>
+	<%= link_to "All Contacts", friendships_path(current_user)%><br>
+	<%= link_to "Add New Contact", new_friendship_path %><br>
 </div>	
 
-
-
-<h2> You have <%= current_user.meetings.count + current_user.inverse_meetings.count%> meetings</h2>
-	<div>
-	<% for meeting in current_user.meetings %>
-	<% if meeting.receiver%>
-	Send to : <%= meeting.receiver.firstname%>(<%=meeting.receiver.email%>)
-	<% end%>
-	<h4><%= meeting.name %></h4>
-	<p> Where - <%= meeting.location %><br></p>
-	<p> When - <%= meeting.date %><br></p>
-	<p> Detail <%= meeting.description %><br></p>
-	<%= link_to "remove", meeting, :method => :delete %>
-	<%= link_to "Edit", edit_meeting_path(meeting) %>
-	<%end%>
-	
-	</div>
-
-<h2> Others</h2>
-<div>
-<ul>
-	<% for inverse_meeting in current_user.inverse_meetings %>
-		<h4><%= inverse_meeting.name%> <%=inverse_meeting.receiver.email%></h4><br>
-		<p>Where - <%= inverse_meeting.location%></p>
-		<p>When  - <%= inverse_meeting.date%></p>
-		<p>Detail - <%= inverse_meeting.description%></p>
-		<p>Send by:<%= inverse_meeting.user.email %></p>
-	<% end %>
-</ul>
+<div class="meetme">
+	<h4> You have <%= @total_meetings.count %> meetme@</h4>
+	<%= link_to "See all meetmees", meetings_path%><br>
+	<%= link_to "Add new meetme@", new_meeting_path %><br>
 </div>
-<div id="map-canvas"></div>
+
 
 
 
