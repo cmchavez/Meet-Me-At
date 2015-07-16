@@ -39,6 +39,7 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 
 gem 'paperclip', '~> 4.1'
+gem 'aws-sdk'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 
