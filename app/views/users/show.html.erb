@@ -7,32 +7,8 @@ Hello <%= current_user.firstname %><br>
 
 
 <div class="contactlist" %>
+<%= link_to "Add New Contact", new_friendship_path %>
 <%= link_to "Contacts", friendships_path%>
-<h2>Your Friends</h2>
-<ul>
-	<% for friendship in current_user.friendships %>
-		<li>
-		  	<%= friendship.friend.firstname %>
-		  	<%= link_to "remove", friendship, :method => :delete %>
-		</li>
-	<% end %>
-</ul>
-
-	<h2>Friended by Users</h2>
-		<ul>
-			<% for user in current_user.inverse_friends %>
-				<li><%= user.firstname %></li>
-			<% end %>
-		</ul>
-</div>
-
-<% if current_user.invitation%>
-<% if current_user.invitation_limit > 0 %>
-	<p> 	
-		<%= link_to "Invite a Friend!", new_email_invitation_path %>
-			(<%= current_user.invitation_limit %> left )
-	</p> 
-<% end%>
 <% end %>
 
 
