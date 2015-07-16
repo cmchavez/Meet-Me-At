@@ -1,0 +1,23 @@
+<h3>Hi <%=current_user.firstname%><br></h3>
+<%=current_user.id %><br>
+<%=image_tag current_user.image %><br>
+
+
+<h4> Your have <%= @total_friends.count %> friends </h4>
+<% @friends.each do  |f|%>
+	Firstname: <%= f.firstname%><br>
+	Email: <%= f.email %><br>
+	userid: <%= f.id %><br>
+	<%= image_tag f.image %><br>
+<% end %>
+
+
+
+<% @inverse_friends.each do  |fv|%>
+	First name: <%= fv.firstname%><br>
+	Email: <%= fv.email%><br>
+	userid : <%= fv.id %>
+	<%= image_tag fv.image %><br>
+
+<% end %>
+

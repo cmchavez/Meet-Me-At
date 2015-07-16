@@ -28,7 +28,15 @@ class SearchesController < ApplicationController
 	# end 
 
 	def new
-		@users = User.all
+		@total_friends = []
+		@friends = current_user.friends.all
+		@friends.each do |f|
+			@total_friends << f
+		end
+		@inverse_friends = current_user.inverse_friends.all
+		@inverse_friends.each do |fv|
+			@total_friends << fv
+		end 
 	end
 
 

@@ -35,28 +35,21 @@ function initialize() {
              map: my_map,
              icon: image,
              animation: google.maps.Animation.DROP,
-             title: 'My Location'
+             title: 'You are here'
              });
 
         var currentlocation_info = new google.maps.InfoWindow({
             content: currentlocation_marker.title
         });
 
-        google.maps.event.addListener(currentlocation_marker, 'mouseover', function() {
-            currentlocation_info.open(my_map, currentlocation_marker);
-        });
-
-        google.maps.event.addListener(currentlocation_marker, 'mouseout', function() {
-            currentlocation_info.close(my_map, currentlocation_marker);
-        });
-
+         currentlocation_info.open(my_map, currentlocation_marker)
     });
 
     // Find the map DIV (if it exists)
     var el = document.getElementById('map-canvas')
 
     // Bail out if there's not an address map on the page
-    // if(!el) return
+    if(!el) return
     // Get an instance of the geocoder
     var geocoder = new google.maps.Geocoder()
     
@@ -143,7 +136,7 @@ function initialize() {
                         map.fitBounds(bounds);
                     }
                     else{
-                        map.setCenter(bounds.getCenter());
+                        map.setCenter(c);
                         map.setZoom(4);
                     }  
             })
