@@ -1,11 +1,11 @@
 <%= form_tag "/meetings", method: :post do %>
 
 <p> Event name: <p>
-<p><%= text_field_tag :name, params[:name] %></p><br>
+<p><%= text_field_tag "meeting[name]", params[:name] %></p><br>
 <p>Location</p>
-<p><%= text_field_tag :location, params[:location]%></p><br>
+<p><%= text_field_tag "meeting[location]", params[:location]%></p><br>
 <p>Description</p> 	 	
-<p><%= text_field_tag :description, params[:description] %></p><br>
+<p><%= text_field_tag "meeting[description]", params[:description] %></p><br>
 <p><%= submit_tag"Add to meetme@"%></p>
 <% end %>
 
