@@ -28,16 +28,13 @@ class SearchesController < ApplicationController
 	# end 
 
 	def new
-		response = Meetupapi.find(params[:name], params[:zipcode])
-		@results = response["results"]
+		#raise @meeting.inspect
+		# @meeting = current_user.meetings.build
 		
 		
 	end 
 
-	def create 
-		
-	
-	end
+
 
 
 
