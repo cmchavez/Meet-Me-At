@@ -5,7 +5,7 @@ Hello <%= current_user.firstname%><br>
 <%= current_user.email %><br>
 <%= current_user.firstname %><br>
 <%= current_user.lastname %><br>
-<%= image_tag current_user.image%><br>
+<%= image_tag current_user.image(:large)%><br>
 
 <h2>Your Contacts</h2>
 <ul>
@@ -20,6 +20,7 @@ Hello <%= current_user.firstname%><br>
 		<ul>
 			<% for user in current_user.inverse_friends %>
 				<li><%= user.firstname %></li>
+
 			<% end %>
 		</ul>
 	

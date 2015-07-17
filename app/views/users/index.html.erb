@@ -5,12 +5,12 @@
 	<tr>
 		<td><%= u.firstname %></td><br>
 		<td><%= image_tag u.image%></td><br>
-		<td><%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+		<!-- <td><%#= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
 	                    "data-sid" => current_user.id, "data-rip" => u.id %>
 
-      		</td><br>
-      		<td><%= link_to "Add Friend", friendships_path(:friend_id => u), :method => :post %></td><br>
-      		<td><%= link_to "Add a Meetme", new_meeting_path(:params =>{:receiver_id => u})%></td><br>
+      		</td><br> -->
+      		<td><%= link_to "Add to contact", friendships_path(:friend_id => u), :method => :post %></td><br>
+      		<!-- <td><%#= link_to "Add a Meetme", new_meeting_path(:params =>{:receiver_id => u})%></td><br> -->
 
 
       	</tr>
