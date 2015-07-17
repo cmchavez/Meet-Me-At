@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     has_many :sent_invitations, :class_name => 'Invitation', :foreign_key => 'sender_id'
     belongs_to :invitation
 
-    before_create :set_invitation_limit
+    # before_create :set_invitation_limit
 
 def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
