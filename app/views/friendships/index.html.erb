@@ -1,3 +1,4 @@
+<div class="friendlist">
 <h2> Your have <%= @total_friends.count %> friends </h2>
 <% for friendship in current_user.friendships %>
 	<%= image_tag friendship.friend.image %><br>
@@ -13,4 +14,4 @@
 	Name: <%= user.firstname %><br>
 	Email: <%= user.email%><br>
 <% end %>
-
+</div>

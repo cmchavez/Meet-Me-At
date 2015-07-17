@@ -23,6 +23,7 @@ text-align: center;
 background-image: url("background2.jpg");
 background-attachment: fixed;
 background-size: cover;
+background-repeat: repeat;
 height:100%
 }
 
@@ -92,3 +93,14 @@ padding-bottom: 40px;
 padding-left: 40px;
 }
 
+.friendlist {
+	width: 70%;
+	height: 900px;
+	background-color: white;
+	opacity: .75;
+    	filter: alpha(opacity=40);
+    	padding: 50px;
+    	margin-right: 200px;
+	margin-left: 200px;
+	
+}
