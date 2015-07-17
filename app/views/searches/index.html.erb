@@ -1,14 +1,16 @@
+<div class="userprofile">
 <%= form_tag searches_path, method: :get do %>
 
-<p> Event <p>
+<p> Event Keyword: <p>
 <p><%= text_field_tag :name%></p><br>
-<p>Zipcode</p>
+<p>Zip Code:</p>
 <p><%= text_field_tag :zipcode%></p><br>
-<p><%= submit_tag"Search" %></p>
+<p><%= submit_tag"Search", class: "btn btn-lg btn-warning" %></p>
 <% end %>
 
 <% if @results %>
 <%=@name %>
+<br>
 
 <h3>There are <strong><%=@results.length%></strong> near this area</h3>
 <%@results.each do |r|%>
@@ -31,3 +33,4 @@
 
 
 <% end %>
+</div>
