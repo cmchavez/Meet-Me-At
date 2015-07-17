@@ -1,7 +1,3 @@
-<h3>Hi <%=current_user.firstname%><br></h3>
-<%=image_tag current_user.image(:large) %><br>
-
-
 <h2> Your have <%= @total_friends.count %> friends </h2>
 <% for friendship in current_user.friendships %>
 	<%= image_tag friendship.friend.image %><br>
