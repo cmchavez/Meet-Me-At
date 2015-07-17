@@ -1,27 +1,46 @@
 
 <p id="notice"><%= notice %></p>
 <div class="userprofile">
-<%= image_tag current_user.image%><br>
-Hello <%= current_user.firstname %><br>
+	<%= image_tag current_user.image%><br>
+	Hello <%= current_user.firstname %><br>
 </div>
 
 
 <div class="contactlist" %>
 	<h4> You have <%=@total_friends.count %> contacts</h4>
 	<%= link_to "All Contacts", friendships_path(current_user)%><br>
-	<%= link_to "Add New Contact", new_friendship_path %><br>
+	<%= link_to "Add New Contact", users_path %><br>
 </div>	
 
 <div class="meetme">
-	<h4> You have <%= @total_meetings.count %> meetme@</h4>
-	<%= link_to "See all meetmees", meetings_path%><br>
-	<%= link_to "Add new meetme@", new_meeting_path %><br>
+	<h2> You sent <%= current_user.meetings.count%> meetme@ to your friends</h2>
+	<%=link_to "Add a meetme@", new_meeting_path %>
+	
+	<% for meeting in current_user.meetings %>
+	
+		<h4>meetme@ <%= meeting.name %></h4>, with <% if meeting.receiver%>
+		<%=meeting.receiver.firstname %><br>
+	<% end%>
+		<%= link_to "remove", meeting, :method => :delete %>
+		<%= link_to "Edit", edit_meeting_path(meeting) %>
+	<%end%>
+	
 </div>
 
 
+<div>
+	<h2> You have <%=current_user.inverse_meetings.count%> from your friends</h2>
+	<% for inverse_meeting in current_user.inverse_meetings %>
+		<h4>meetme@<strong><%= inverse_meeting.name%></strong> with <%=inverse_meeting.user.firstname.upcase%></h4><br>
+		
+	<% end %>
+</ul>
+</div>
 
 
-<p><%= link_to "Find Friends", users_path %></p>
+<h4><%= link_to "Find Friends", users_path %></h4>
+
+
 
 	
 
