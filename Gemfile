@@ -39,6 +39,7 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 
 gem 'paperclip', '~> 4.1'
+gem 'aws-sdk'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 
@@ -49,6 +50,8 @@ gem 'httparty', '~> 0.11.0'
 gem 'letter_opener', :group => :development
 
 gem 'yelp', require: 'yelp'
+ 
+gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
