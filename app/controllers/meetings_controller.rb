@@ -42,7 +42,7 @@ class MeetingsController < ApplicationController
     @meeting = current_user.meetings.build(meeting_params)
     respond_to do |format|
       if @meeting.save
-        format.html { redirect_to root_url, notice: 'meeting successfully created.' }
+        format.html { redirect_to current_user, notice: 'meeting successfully created.' }
         format.json { render :show, status: :created, location: @meeting }
 
       else
