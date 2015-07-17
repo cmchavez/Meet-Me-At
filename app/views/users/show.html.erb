@@ -1,3 +1,6 @@
+<html>
+	<main>
+<body>
 <p id="notice"><%= notice %></p>
 
 <div class="userprofile">
@@ -8,7 +11,7 @@
 
 <div class="contactlist" %>
 	<h4> You have <%=@total_friends.count %> contacts</h4>
-	<%= link_to "All Contacts", friendships_path(current_user)%><br>
+	<%= link_to "All Contacts", friendships_path(current_user), %><br>
 	<%= link_to "Add New Contact", users_path %><br>
 </div>	
 
@@ -41,7 +44,6 @@
 <h4><%= link_to "Find Friends", users_path %></h4>
 <h4><%= link_to "Fun Events", searches_path %></h4>
 </div>
-
 
 	
 

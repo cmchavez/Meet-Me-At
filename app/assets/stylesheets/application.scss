@@ -2,6 +2,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body, html, main {
+height: 100%;
+}
 
 #map-canvas { 
 width: 600px;
@@ -76,17 +79,16 @@ background-color: white;
 
 .userprofile {
 font-color: white;
-margin-top: 100px;
+margin-top: 0px;
 background-color: white;
 margin-right: 300px;
 margin-left: 300px;
 border-radius: 5px;
 opacity: .75;
     filter: alpha(opacity=40);
-padding-top: 10px;
+padding-top: 50px;
 padding-right: 45px;
-padding-bottom: 5px;
+padding-bottom: 40px;
 padding-left: 40px;
-
 }
 
