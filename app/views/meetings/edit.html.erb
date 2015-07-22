@@ -1,6 +1,5 @@
-<%= form_for @meeting do |m| %>
-	<h4>Friend</h4>
-	<p><%= hidden_tag :receiver_id, params[:reciever_id]%></p>
+<%= form_for :meeting, url: meeting_path(@meeting), method: :patch do |m| %>
+
 	<p>Meeting Name</p>
 	<p><%= m.text_field :name %></p><br>
 	<p>Meeting Location</p>

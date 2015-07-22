@@ -1,1 +1,18 @@
+<div>
+<h2> <%= @meeting.name%> </h2>
+	<h3> with <%= @meeting.receiver.firstname %></h3>
+	<h3> in <%= @meeting.location %></h3>
+	<% if @meeting.date %>
+	<h3> on <%= @meeting.date %></h3>
+	<% end %>
+	<h3> Detail : <%= @meeting.description %></h3>
+	<% if current_user == @meeting.user_id %>
+	<%= link_to "Edit", edit_meeting_path(@meeting) %>
+	<%= link_to "Remove", @meeting, :method => :delete %>
+	<% end %>
+</div>
+
+<div id="map-canvas"></div>
+
+
 

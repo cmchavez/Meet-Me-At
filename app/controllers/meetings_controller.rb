@@ -11,16 +11,17 @@ class MeetingsController < ApplicationController
     end
   end
 
-    def show
-    @meeting = current_user.meetings.find(params[:id])
-    respond_to do |format|
-      format.html {
-          render
-      }
-      format.json {
-          render json: @meeting
-      }
-  end
+    def show 
+        @meeting = Meeting.find(params[:id])
+        respond_to do |format|
+          format.html {
+              render
+          }
+          format.json {
+              render json: @meeting
+          }
+      end
+    
   end 
 
   def new

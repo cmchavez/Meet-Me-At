@@ -19,10 +19,13 @@
 	
 	<% for meeting in current_user.meetings %>
 	
-		<h4>meetme@ <%= meeting.name %></h4>
+		<h4>meetme@ <%= meeting.name %> with <%=meeting.receiver.firstname%></h4>
+		<h5><%= meeting.description %></h5>
+
 	
+		<%= link_to "See detail", meeting_path(meeting) %>
+		<%= link_to "Edit", edit_meeting_path(meeting, meeting.receiver_id) %>
 		<%= link_to "Remove", meeting, :method => :delete %>
-		<%#= link_to "Edit", meeting_path(:params => {:reciever_id => meeting.receiver_id, :mee}), :method => :patch %>
 	<%end%>
 	
 </div>
@@ -32,6 +35,7 @@
 	<h2> You have <%=current_user.inverse_meetings.count%> from your friends</h2>
 	<% for inverse_meeting in current_user.inverse_meetings %>
 		<h4>meetme@<strong><%= inverse_meeting.name%></strong> with <%=inverse_meeting.user.firstname.upcase%></h4><br>
+		<%= link_to "See detail", meeting_path(inverse_meeting) %>
 		
 	<% end %>
 	
