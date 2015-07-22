@@ -19,8 +19,11 @@
 	
 	<% for meeting in current_user.meetings %>
 	
-		<h4>meetme@ <%= meeting.name %> with <%=meeting.receiver.firstname%></h4>
-		<h5><%= meeting.description %></h5>
+		<h4>meetme@ <%= meeting.name %> </h4>
+		<%# if meeting.reciever %>
+		with <%#=meeting.receiver.firstname%>
+		<%#end%>
+		<h5><%#= meeting.description %></h5>
 
 	
 		<%= link_to "See detail", meeting_path(meeting) %>

@@ -1,6 +1,5 @@
 <%= form_for @meeting do |m| %>
-	<h4>Friend</h4>
-	<p><%= select_tag :receiver_id, options_from_collection_for_select(@total_friends, "id", "firstname") %></p>
+	<p><%= m.collection_select :receiver_id, @total_friends, :id, :firstname %>
 	<p>Meeting Name</p>
 	<p><%= m.text_field :name %></p><br>
 	<p>Meeting Location</p>
