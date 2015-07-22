@@ -14,6 +14,10 @@ class FriendshipsController < ApplicationController
 
 	end 
 
+	def show
+		@friendship = Friendship.find(params[:id])
+	end
+
 	def new
 		@friendship = current_user.friendships.new
 	end 
