@@ -15,6 +15,7 @@
 			<h3><%= f.friend.firstname%></h3>
 			<%= f.friend.email %><br>
 			<%= link_to "detail", friendship_path(f) %><br>
+			<%= link_to "remove", f, :method => :delete, data: { confirm: 'Are you sure?' } %><br>
 		<% end %>
 	</div>
 	<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-warning" %><br>
@@ -36,7 +37,7 @@
 	
 		<%= link_to "See detail", meeting_path(meeting) %>
 		<%= link_to "Edit", edit_meeting_path(meeting, meeting.receiver_id) %>
-		<%= link_to "Remove", meeting, :method => :delete %>
+		<%= link_to "Remove", meeting, :method => :delete, data: { confirm: 'Are you sure?' } %>
 	<%end%>
 	
 </div>

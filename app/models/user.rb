@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
     has_many :sent_invitations, :class_name => 'Invitation', :foreign_key => 'sender_id'
     belongs_to :invitation
 
+  scope :all_except, ->(user) { where.not(id: (user.friends + user.inverse_friends + [user]).map(&:id))}
+
     
 
 def self.from_omniauth(auth)
@@ -45,9 +47,9 @@ def emailinvitation_token=(token)
 
 end 
 
-def self.all_except(user)
-  where.not(id: user)
-end
+# def self.all_except(user)
+#   where.not(id: user)
+# end
 
 
 
