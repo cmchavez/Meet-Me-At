@@ -9,6 +9,13 @@
 
 <div class="contactlist" %>
 	<h4> You have <%=@total_friends.count %> contacts</h4>
+	<div class="firstfivefreinds">
+		<% current_user.friendships[0..5].each do |f| %>
+			<%= image_tag f.friend.image %>
+			<h3><%= f.friend.firstname%></h3>
+			<%= f.friend.email %><br>
+		<% end %>
+	</div>
 	<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-warning" %><br>
 	<br>
 	<%= link_to "Add New Contact", users_path, class: "btn btn-md btn-warning"%><br>
