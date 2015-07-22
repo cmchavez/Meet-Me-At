@@ -14,6 +14,7 @@
 			<%= image_tag f.friend.image %>
 			<h3><%= f.friend.firstname%></h3>
 			<%= f.friend.email %><br>
+			<%= link_to "detail", friendship_path(f) %><br>
 		<% end %>
 	</div>
 	<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-warning" %><br>

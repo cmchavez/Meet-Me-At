@@ -1,7 +1,7 @@
 <%= image_tag @friendship.friend.image %><br>
 <h2> <%= @friendship.friend.firstname %> <%= @friendship.friend.lastname%></h2>
 <h3> <%= @friendship.friend.email %></h3>
-<%= @friendship.friend_id %>
+
 <%= link_to "Remove", @friendship, :method => :delete, data: { confirm: 'Are you sure?' } %><br>
 
 <%= link_to "Add a meetme@", new_meeting_path(@friendship.friend_id) %><br>
