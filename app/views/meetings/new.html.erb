@@ -1,1 +1,14 @@
-<%= render "form" %>
+<%= form_for @meeting do |m| %>
+	<h4>Friend</h4>
+	<p><%= select_tag :receiver_id, options_from_collection_for_select(@total_friends, "id", "firstname") %></p>
+	<p>Meeting Name</p>
+	<p><%= m.text_field :name %></p><br>
+	<p>Meeting Location</p>
+	<p><%= m.text_field :location%></p><br>
+	<p>Meeting time</p>
+	<p><%= m.date_select :date%></p><br>
+	<p>Meeting description</p>
+	<p><%= m.text_field :description%></p><br>
+	
+	<p><%= m.submit %></p>
+ <%end %>

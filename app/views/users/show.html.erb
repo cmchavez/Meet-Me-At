@@ -1,6 +1,4 @@
-<html>
-	<main>
-<body>
+
 <p id="notice"><%= notice %></p>
 
 <div class="userprofile">
@@ -11,27 +9,20 @@
 
 <div class="contactlist" %>
 	<h4> You have <%=@total_friends.count %> contacts</h4>
-<<<<<<< HEAD
-	<%= link_to "All Contacts", friendships_path(current_user) %><br>
-	<%= link_to "Add New Contact", users_path %><br>
-=======
 	<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-warning" %><br>
 	<br>
 	<%= link_to "Add New Contact", users_path, class: "btn btn-md btn-warning"%><br>
->>>>>>> style
 </div>	
 
 <div class="meetme">
 	<h2> You sent <%= current_user.meetings.count%> meetme@ to your friends</h2>
-	<%=link_to "Add a meetme@", new_meeting_path, class: "btn btn-md btn-warning" %>
 	
 	<% for meeting in current_user.meetings %>
 	
-		<h4>meetme@ <%= meeting.name %></h4>, with <% if meeting.receiver%>
-		<%=meeting.receiver.firstname %><br>
-	<% end%>
-		<%= link_to "remove", meeting, :method => :delete %>
-		<%= link_to "Edit", edit_meeting_path(meeting) %>
+		<h4>meetme@ <%= meeting.name %></h4>
+	
+		<%= link_to "Remove", meeting, :method => :delete %>
+		<%#= link_to "Edit", meeting_path(:params => {:reciever_id => meeting.receiver_id, :mee}), :method => :patch %>
 	<%end%>
 	
 </div>
@@ -43,14 +34,15 @@
 		<h4>meetme@<strong><%= inverse_meeting.name%></strong> with <%=inverse_meeting.user.firstname.upcase%></h4><br>
 		
 	<% end %>
-</ul>
+	
 </div>
-
+<%=link_to "Add a meetme@", new_meeting_path, class: "btn btn-md btn-warning" %>
 
 <h4><%= link_to "Find Friends", users_path, class: "btn btn-md btn-warning" %></h4>
 <h4><%= link_to "Fun Events", searches_path, class: "btn btn-md btn-warning"%></h4>
 </div>
 
+<div id="map-canvas"></div>
 	
 
 
