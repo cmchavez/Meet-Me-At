@@ -10,7 +10,7 @@
 <div class="contactlist" %>
 	<h4> You have <%=@total_friends.count %> contacts</h4>
 	<div class="firstfivefreinds">
-		<% current_user.friendships[0..5].each do |f| %>
+		<% current_user.friendships[0..4].each do |f| %>
 			<%= image_tag f.friend.image %>
 			<h3><%= f.friend.firstname%></h3>
 			<%= f.friend.email %><br>
@@ -30,7 +30,7 @@
 	
 		<h4>meetme@ <%= meeting.name %> </h4>
 		<%# if meeting.reciever %>
-		with <%#=meeting.receiver.firstname%>
+		with <%=meeting.receiver.firstname%>
 		<%#end%>
 		<h5><%#= meeting.description %></h5>
 
