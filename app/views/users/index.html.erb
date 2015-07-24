@@ -1,12 +1,10 @@
-
-<div class="index-background">
 <h1>Checkout Other Users </h1>
 
 <% @users.each do |u| %>
 	<tr>
 	
 		<td> <%= u.firstname.upcase %></td> <br>
-		<td> <div id="profile-image"><%= image_tag u.image%></td> </div><br>
+		<td> <%= image_tag u.image, :class=> "profile-image"%></td> <br>
 
 		<!-- <td><%#= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
 	                    "data-sid" => current_user.id, "data-rip" => u.id %>
@@ -21,4 +19,3 @@
 
 
 <%= link_to "My Profile", user_path(current_user) %>
-</div>
