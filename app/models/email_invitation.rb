@@ -4,10 +4,10 @@ class EmailInvitation < ActiveRecord::Base
 
 	validates_presence_of :recipient_email
 	validate :recipient_is_not_registered
-	validate :sender_has_invitations, :if => :sender
+	# validate :sender_has_invitations, :if => :sender
 
 	before_create :generate_token
-	before_create :decrement_sender_count, :if => :sender
+	# before_create :decrement_sender_count, :if => :sender
 
 private
 

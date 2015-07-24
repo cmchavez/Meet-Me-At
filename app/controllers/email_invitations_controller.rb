@@ -7,11 +7,13 @@ class EmailInvitationsController < ApplicationController
   	@emailinvitation = EmailInvitation.new(emailinvitation_params)
  	@emailinvitation.sender = current_user
   		if @emailinvitation.save
-		      Mailer.emailinvitation(@emailinvitation, users_path(@emailinvitation.token))
+		      Mailer.emailinvitation(@emailinvitation, users_path(@emailinvitation.token)).deliver_now  
 		      flash[:notice] = "Thank you, invitation sent."
 		      redirect_to users_path
   		else
     		render :action => 'new'
+            flash[:notice] = "This email address is already registered"
+
     	end 
     	
   end

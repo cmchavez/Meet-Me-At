@@ -15,13 +15,14 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-	devise :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
-	has_attached_file :image, :styles => { small: "64x64", med: "100x100", large: "200x200" }, :default_url =>"robot.png"
-    validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  devise :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
+  has_attached_file :image, :styles => { small: "64x64", med: "100x100", large: "200x200" }, :default_url =>"robot.png"
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
-    has_many :sent_invitations, :class_name => 'Invitation', :foreign_key => 'sender_id'
-    belongs_to :invitation
-
+  has_many :sent_invitations, :class_name => 'Invitation', :foreign_key => 'sender_id'
+  
+  belongs_to :invitation
+  # to exclude user and user's friends from the users index page
   scope :all_except, ->(user) { where.not(id: (user.friends + user.inverse_friends + [user]).map(&:id))}
 
     
