@@ -1,35 +1,52 @@
-<div class="signin">
-  <div id="logo"></div>
-<div class="fillout">
-<h2>Welcome!</h2>
+<div class="container">
 
-<h3>Please Sign In</h3>
+  <div class="col-md-6">
+    <div id="greeting" class="col-md-12"><h1>Welcome!</h1></div>
+    <div id="logo" class="col-md-12"></div>
+  </div> <!-- close col-xs-6 div -->
 
+  <div = class="col-md-6">
+ 
+      <div class="signin">
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="fillout">
+              
+              <h3 class="login">Please Sign In</h3>
+              <div class="form-inline"><%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                <div class="form-group">
+
+                <%= f.label :email, :class =>"sr-only"%>
+                <%= f.email_field :email, autofocus: true, :class=>"form-control", placeholder:"Email address"%>
+                </div> <!-- close form-group div -->
+
+                 <div class="form-group">
+                <%= f.label :password, :class=>"sr-only"%>
+                <%= f.password_field :password, autocomplete: "off", :class=>"form-control", placeholder:"password" %>
+                </div> <!-- close form-group div -->
+
+                 <div class="checkbox">
+                  <% if devise_mapping.rememberable? -%>
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me, :class =>"login" %>
+                  <% end -%>
+                </div> <!-- close checkbox -->
+               
+            
+               <%= f.submit "Sign in", :class=>"btn btn-default" %>
     
 
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %><br>
+            <% end %>
+   
+       </div> <!-- close fillout div -->
+       </div> <!-- close form-inline -->
 
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %><br>
+      <%= render "users/shared/links" %>
+        </div> <!-- close signin div -->
 
-    <% if devise_mapping.rememberable? -%>
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %><br>
-    <% end -%>
+  </div> <!-- close col-xs-6 div -->
 
-  <button type="submit" class="btn btn-primary">
-  <i class="icon-user icon-white"></i> Sign in
-  </button>
-  
-    <%#= f.submit "Log in",  %>
-  </div>
-
-<% end %>
-
-<%= render "users/shared/links" %><br>
+</div><!--  close container div -->
 
 
 

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'users#index'
+
   get 'email_invitations/new'
 
   get 'email_invitations/create'
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
 
-  root 'users#index'
+  
   get "users" => "users#index", as: :users
   get "users/:id" => "users#show", as: :user
 
