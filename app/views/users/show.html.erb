@@ -46,7 +46,7 @@
 <div>
 	<h2> You have <%=current_user.inverse_meetings.count%> from your friends</h2>
 	<% for inverse_meeting in current_user.inverse_meetings %>
-		<h4>meetme@<strong><%= inverse_meeting.name%></strong> with <%=inverse_meeting.user.firstname.upcase%></h4><br>
+		<h4>meetme@<strong><%= inverse_meeting.name%></strong> with <%=inverse_meeting.user.firstname.upcase %></h4><br>
 		<%= link_to "See detail", meeting_path(inverse_meeting) %>
 		
 	<% end %>
