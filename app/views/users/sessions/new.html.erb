@@ -9,14 +9,6 @@
  
       <div class="signin">
         <h3 class="login">Please Sign In</h3>
-        <div class = 'col-md-12'>
-          <%- if devise_mapping.omniauthable? %>
-            <%- resource_class.omniauth_providers.each do |provider| %>
-              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-default" %>
-
-              <% end -%>
-            <% end -%>
-          </div>
 
           <div class="fillout">
               
@@ -34,7 +26,7 @@
                 <%= f.password_field :password, autocomplete: "off", :class=>"form-control", placeholder:"password" %>
                 </div> <!-- close form-group div -->
                
-               <%= f.submit "Sign in", :class=>"btn btn-default btn-sm" %><br>
+               <%= f.submit "Sign in", :class=>"btn btn-default" %><br>
 
 
                  <div class="checkbox">
