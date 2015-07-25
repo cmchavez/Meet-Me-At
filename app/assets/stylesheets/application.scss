@@ -22,6 +22,7 @@ border-radius: 5px;
 	display: none;
 	float:right;
 	margin-top: 2%;
+
 }
 
 /*.nav-bar {
@@ -44,7 +45,6 @@ border-radius: 5px;
 	border: 2px white solid;
 	border-radius: 0px;
 	width: 250px;
-
 }
 
 
@@ -71,17 +71,17 @@ border-radius: 5px;
 }
 
 .background {
-background-image: url("filter6.jpg");
+background-image: url("filter4.jpg");
 background-attachment: fixed;
 background-size: cover;
-/*background-size: cover;*/
 height:100%;
 margin-bottom: 0px;
+margin-top: 0px;
 width: 100%;
 }
 
 .welcome {
-margin-top: -50px;
+
 margin-bottom: 0px;
 font-family: 'Josefin Sans', sans-serif;
 font-size: 20px;
@@ -122,8 +122,9 @@ border-radius: 10px;
 background-image: url("logowhite.png");
 background-repeat: no-repeat;
 background-position: center;
-height: 280px;
+height: 260px;
 width: 100%;
+margin-top: 2%;
 
 }
 
@@ -147,6 +148,12 @@ width: 100%;
 	margin-top: 5%;
 	background: transparent;
 	color: white;
+}
+
+div.home-nav {
+	background-color: black;
+	height: 50px;
+	margin-top: -2%;
 }
 .invite {
 text-align: right;

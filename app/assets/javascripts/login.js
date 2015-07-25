@@ -7,6 +7,7 @@ function login(){
 	$(".loginnow").click(function(){
 		console.log('clicked')
 		$(".login1").fadeOut("fast");
+		// $("#greeting").fadeOut("fast");
 		$(".signin").fadeIn("fast");
 		$(".nav_signup").fadeIn("fast");
 
