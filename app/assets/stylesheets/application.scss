@@ -18,6 +18,23 @@ border-radius: 5px;
 
 }
 
+.form-inline .form-control {
+	background: transparent;
+	color: white;
+
+}
+
+
+.btn-default {
+	background: transparent;
+	color: white;
+	border-radius: 0px;
+}
+
+.input-lg {
+	border-radius: 0px;
+}
+
 .background {
 background-image: url("filter4.jpg");
 background-attachment: fixed;
@@ -48,6 +65,7 @@ text-align: center;
 }
 
 .signin {
+display: none;
 margin-top: 50px;
 color: white;
 padding-top: 10px;

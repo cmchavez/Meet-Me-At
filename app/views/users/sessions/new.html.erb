@@ -6,9 +6,10 @@
   </div> <!-- close col-xs-6 div -->
 
   <div class="col-md-6">
+    <h3 class="login">Please Sign In</h3>
+    <button class="btn btn-default btn-large pretty">Sign in</button>
  
       <div class="signin">
-        <h3 class="login">Please Sign In</h3>
 
           <div class="fillout">
               
@@ -18,15 +19,15 @@
                 <div class="form-group">
 
                 <%= f.label :email, :class =>"sr-only"%>
-                <%= f.email_field :email, autofocus: true, :class=>"form-control", placeholder:"Email address"%>
+                <%= f.email_field :email, autofocus: true, :class=>"form-control input-lg", placeholder:"Email address"%>
                 </div> <!-- close form-group div -->
 
                  <div class="form-group">
                 <%= f.label :password, :class=>"sr-only"%>
-                <%= f.password_field :password, autocomplete: "off", :class=>"form-control", placeholder:"password" %>
+                <%= f.password_field :password, autocomplete: "off", :class=>"form-control input-lg", placeholder:"password" %>
                 </div> <!-- close form-group div -->
                
-               <%= f.submit "Sign in", :class=>"btn btn-default" %><br>
+               <%= f.submit "Sign in", :class=>"btn btn-default btn-lg" %><br>
 
 
                  <div class="checkbox">
