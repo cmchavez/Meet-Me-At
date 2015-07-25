@@ -1,4 +1,7 @@
 <div class="container">
+<div class="nav_signup col-md-12">
+ <%= render "sigup" %>
+</div>
 
   <div class="col-md-12">
     <div id="greeting" class="col-md-12"><h1>Welcome!</h1></div>
@@ -34,7 +37,7 @@
                 <%= f.password_field :password, autocomplete: "off", :class=>"form-control input-lg", placeholder:"password" %>
                 </div> <!-- close form-group div -->
                
-               <%= f.submit "Sign in", :class=>"btn btn-primary btn-lg" %><br>
+               <%= f.submit "Sign in", :class=>"btn btn-primary btn-lg submit" %><br>
 
 
                  <div class="checkbox">

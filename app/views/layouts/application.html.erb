@@ -19,19 +19,14 @@
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="container nav-bar">
+<%= render partial: "layouts/nav"%>
+</div>
+<hr>
 <div class="background">
 <div class="welcome">
-<div class="logo"></div>
+
 <div class="profile">
-  <%if current_user %>
-  <h3>Hello <%= current_user.firstname%></h3>
-    <%= link_to "Home", user_path(current_user.id)%>|
-    <%= link_to "All Users", users_path%>|
-    <%= link_to "Invite a Friend!", new_email_invitation_path %>|
-    <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %>|
-    <h3>Hello <%= current_user.firstname%></h3>
-    <% end %>
-    <hr>
 </div>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>

@@ -8,8 +8,9 @@ function login(){
 		console.log('clicked')
 		$(".login1").fadeOut("fast");
 		$(".signin").fadeIn("fast");
+		$(".nav_signup").fadeIn("fast");
 
-	})
+	});
 
 }
 
