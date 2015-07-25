@@ -6,8 +6,9 @@ function login(){
 	console.log("login is loading")
 	$("button").click(function(){
 		console.log('clicked')
-		$(this).fadeOut("fast");
+		$(".login1").fadeOut("fast");
 		$(".signin").fadeIn("fast");
+
 	})
 
 }

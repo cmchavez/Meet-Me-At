@@ -28,11 +28,28 @@ border-radius: 5px;
 .btn-default {
 	background: transparent;
 	color: white;
+	border: 2px white solid;
 	border-radius: 0px;
+	width: 250px;
+
 }
 
+
+
+.btn-primary {
+	background-color: transparent;
+	border-radius: 0px;
+	border: 2px white solid;
+}
+
+.btn-primary:hover{
+	background-color: white;
+	color:grey;
+	border-color: white;
+}
 .input-lg {
 	border-radius: 0px;
+	border: 2px white solid;
 }
 
 .background {
@@ -41,7 +58,8 @@ background-attachment: fixed;
 background-size: cover;
 /*background-size: cover;*/
 height:100%;
-margin-bottom: 0px;	
+margin-bottom: 0px;
+width: 100%;
 }
 
 .welcome {
@@ -51,12 +69,12 @@ font-family: 'Josefin Sans', sans-serif;
 font-size: 20px;
 font-color: white;
 text-align: center;
+width: 100%;
 }
 
 #greeting {
 	color:white;
-	margin-left: -12%;
-	margin-top: 10%;
+	margin-top: 2%;
 
 }
 
@@ -64,15 +82,16 @@ text-align: center;
 	color:white;
 }
 
+.login1 {
+	text-align: center;
+}
+
 .signin {
 display: none;
-margin-top: 50px;
 color: white;
 padding-top: 10px;
 padding-bottom: 25px;
 text-align: center;
-margin-top: 30%;
-margin-left: -20%;
 border-radius: 10px;
 }
 
@@ -89,11 +108,10 @@ text-align: right;
 #logo {
 background-image: url("logowhite.png");
 background-repeat: no-repeat;
-background-position: left;
+background-position: center;
 height: 300px;
 width: 100%;
-margin-top: 5%;
-margin-left: -20%;
+
 }
 
 .profile {
