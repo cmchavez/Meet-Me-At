@@ -67,10 +67,11 @@ border-radius: 5px;
 
 .input-lg:hover {
 	background:white;
+	color: grey;
 }
 
 .background {
-background-image: url("filter4.jpg");
+background-image: url("filter6.jpg");
 background-attachment: fixed;
 background-size: cover;
 /*background-size: cover;*/
@@ -107,7 +108,6 @@ width: 100%;
 display: none;
 color: white;
 padding-top: 10px;
-padding-bottom: 25px;
 text-align: center;
 border-radius: 10px;
 }
@@ -122,7 +122,7 @@ border-radius: 10px;
 background-image: url("logowhite.png");
 background-repeat: no-repeat;
 background-position: center;
-height: 300px;
+height: 280px;
 width: 100%;
 
 }
@@ -194,9 +194,17 @@ padding-left: 40px;
 }
 
 #profile-image {
-border-radius: 50px;
-background-color: white
-;
+	border-radius: 50px;
+	background-color: white;
+}
+
+
+.alert-success, .alert-danger{
+	background-color: white;
+	opacity: .75;
+    	filter: alpha(opacity=40);
+    	color: black;
+
 }
 
 
