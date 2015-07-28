@@ -1,7 +1,7 @@
 <div class="container">
-<div class="nav_signup col-md-12">
- <%= render "sigup" %>
-</div>
+<!-- <div class="nav_signup col-md-12">
+ <%#= render "sigup" %>
+</div> -->
 
   <div class="col-md-12">
     <div id="greeting" class="col-md-12"><h1>Welcome!</h1></div>
@@ -55,6 +55,9 @@
 
       <%= render "users/shared/links" %>
         </div> <!-- close signin div -->
+
+         <%= link_to "Back", new_user_session_path, :class=>"btn btn-default btn-lg col-md-12 back"%>
+    </div>
 
   </div> <!-- close col-xs-6 div -->
 

@@ -92,7 +92,7 @@ width: 100%;
 
 #greeting {
 	color:white;
-	margin-top: 2%;
+	
 
 }
 
@@ -102,6 +102,11 @@ width: 100%;
 
 .login1 {
 	text-align: center;
+}
+
+.back {
+	width: 100px;
+	
 }
 
 .signin {
@@ -150,11 +155,11 @@ margin-top: 2%;
 	color: white;
 }
 
-div.home-nav {
+/*div.home-nav {
 	background-color: black;
 	height: 50px;
 	margin-top: -2%;
-}
+}*/
 .invite {
 text-align: right;
 }
