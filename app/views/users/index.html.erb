@@ -9,11 +9,10 @@
 	                    "data-sid" => current_user.id, "data-rip" => u.id %>
 
       		</td><br> -->
-      		<td><%= link_to "Add to contact", friendships_path(:friend_id => u), :method => :post %></td><br>
+      		<td><%= link_to "Add to My Contacts", friendships_path(:friend_id => u), :method => :post, class: "btn btn-sm btn-warning" %></td><br>
       		<!-- <td><%#= link_to "Add a Meetme", new_meeting_path(:params =>{:receiver_id => u})%></td><br> -->
-
-
       	</tr>
+      	
 <% end %>
 
 
