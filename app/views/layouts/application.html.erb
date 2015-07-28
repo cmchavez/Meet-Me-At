@@ -4,6 +4,7 @@
 <head>
 <title>Meet-Me@</title>
    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
@@ -18,19 +19,14 @@
     </script>
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="background">
+<div class="home-nav">
+<%= render partial: "layouts/nav1"%>
+</div>
+<!-- <div class="background"> -->
 <div class="welcome">
-<div class="logo"></div>
+
 <div class="profile">
-  <%if current_user %>
-  <h3>Hello <%= current_user.firstname%></h3>
-    <%= link_to "Home", user_path(current_user.id)%>|
-    <%= link_to "All Users", users_path%>|
-    <%= link_to "Invite a Friend!", new_email_invitation_path %>|
-    <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %>|
-    <h3>Hello <%= current_user.firstname%></h3>
-    <% end %>
-    <hr>
 </div>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -41,7 +37,7 @@
 <div class="container">
   <%= yield %>
 </div>
-
 </div>
+
 </body>
 </html>
