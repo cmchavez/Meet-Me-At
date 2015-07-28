@@ -193,7 +193,7 @@ margin-right: 300px;
 margin-left: 300px;
 border-radius: 5px;
 opacity: .75;
-    filter: alpha(opacity=40);
+filter: alpha(opacity=40);
 padding-top: 50px;
 padding-right: 45px;
 padding-bottom: 40px;
@@ -259,7 +259,32 @@ padding-left: 40px;
 
 }
 
+.navbar-default {
+	border-radius: 0px;
+	background: transparent;
+	position: fixed;
+	width: 100%;
+	height: 600px;
 
+	a {
+		margin-left: 5%;
+		color: white;
+	}
+
+	.navbar-brand > h4 {
+	color:white;
+	}
+
+	.navbar-nav > li > a {
+	color:white;
+	}
+
+}
+
+
+
+
+	
 
 
 @media (min-width: 768px) {
@@ -270,6 +295,8 @@ padding-left: 40px;
     max-height: none;
     padding-left:0;
     padding-right:0;
+
+ 
   }
   .navbar-collapse.collapse {
     display: block !important;
@@ -286,7 +313,7 @@ padding-left: 40px;
 	max-width:200px;
 	margin-right: 0;
 	margin-left: 0;
-}	
+}
 
 .navbar-nav,
 .navbar-nav > li,
@@ -294,10 +321,15 @@ padding-left: 40px;
 .navbar-right,
 .navbar-header
 {float:none !important;}
+a.navbar-brand > h4{
+	color:white;
+}
 
-.navbar-right .dropdown-menu {left:0;right:auto;}
+.navbar-right .dropdown-menu {left:0;right:auto; color:white;}
 .navbar-collapse .navbar-nav.navbar-right:last-child {
     margin-right: 0;
+    color: white;
 }
+
 }
 
