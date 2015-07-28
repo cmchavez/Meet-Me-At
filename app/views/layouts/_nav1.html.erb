@@ -19,7 +19,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav"> 
-      <li><a>All Users</a></li>
+      <li><a><%= link_to "Home", user_path(current_user.id)%></a></li>
       <li><a href="#">Invite Your Friends</a></li>
 
       <li class="dropdown">
