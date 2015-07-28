@@ -102,7 +102,7 @@ width: 100%;
 .login1 {
 	text-align: center;
 	margin-top: 4%;
-	margin-bottom: -4%;
+
 }
 
 .back {
@@ -224,7 +224,11 @@ padding-left: 40px;
 
 @media screen and (max-width: 570px) {
     .background {
-        height: 800px;
+        height: 750px;
+    }
+
+    .welcome {
+
     }
 
     .back {
@@ -234,6 +238,12 @@ padding-left: 40px;
     .devise {
     	margin-top: 3%;
     }
+
+    .login1 {
+	text-align: center;
+	margin-top: 20%;
+	
+}
 
 }
 
