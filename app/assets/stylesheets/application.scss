@@ -71,17 +71,16 @@ border-radius: 5px;
 }
 
 .background {
-background-image: url("filter4.jpg");
-background-attachment: fixed;
+background: url("filter4.jpg") no-repeat center center fixed;
+/*background-attachment: fixed;*/
 background-size: cover;
 height:100%;
-margin-bottom: 0px;
+margin-bottom: -10%;
 margin-top: 0px;
 width: 100%;
 }
 
 .welcome {
-
 margin-bottom: 0px;
 font-family: 'Josefin Sans', sans-serif;
 font-size: 20px;
@@ -93,19 +92,22 @@ width: 100%;
 #greeting {
 	color:white;
 	
-
 }
 
 .login {
 	color:white;
+
 }
 
 .login1 {
 	text-align: center;
+	margin-top: 4%;
+	margin-bottom: -4%;
 }
 
 .back {
 	width: 100px;
+
 	
 }
 
@@ -219,4 +221,19 @@ padding-left: 40px;
 
 }
 
+
+@media screen and (max-width: 570px) {
+    .background {
+        height: 800px;
+    }
+
+    .back {
+    	margin-top: 3%;
+    }
+
+    .devise {
+    	margin-top: 3%;
+    }
+
+}
 
