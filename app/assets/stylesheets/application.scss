@@ -18,6 +18,20 @@ border-radius: 5px;
 
 }
 
+.nav_signup {
+	display: none;
+	float:right;
+	margin-top: 2%;
+
+}
+
+/*.nav-bar {
+	background: black;
+	color: black;
+	width: 100%;
+	height: 60px;
+}*/
+
 .form-inline .form-control {
 	background: transparent;
 	color: white;
@@ -31,7 +45,6 @@ border-radius: 5px;
 	border: 2px white solid;
 	border-radius: 0px;
 	width: 250px;
-
 }
 
 
@@ -52,18 +65,22 @@ border-radius: 5px;
 	border: 2px white solid;
 }
 
+.input-lg:hover {
+	background:white;
+	color: grey;
+}
+
 .background {
-background-image: url("filter4.jpg");
-background-attachment: fixed;
+background: url("filter4.jpg") no-repeat center center fixed;
+/*background-attachment: fixed;*/
 background-size: cover;
-/*background-size: cover;*/
 height:100%;
-margin-bottom: 0px;
+margin-bottom: -10%;
+margin-top: 0px;
 width: 100%;
 }
 
 .welcome {
-margin-top: -50px;
 margin-bottom: 0px;
 font-family: 'Josefin Sans', sans-serif;
 font-size: 20px;
@@ -74,23 +91,31 @@ width: 100%;
 
 #greeting {
 	color:white;
-	margin-top: 2%;
-
+	
 }
 
 .login {
 	color:white;
+
 }
 
 .login1 {
 	text-align: center;
+	margin-top: 4%;
+
+}
+
+.back {
+	width: 100px;
+	margin: 2%;
+
+	
 }
 
 .signin {
 display: none;
 color: white;
 padding-top: 10px;
-padding-bottom: 25px;
 text-align: center;
 border-radius: 10px;
 
@@ -98,10 +123,6 @@ border-radius: 10px;
 
 .form-group{
 	margin-top: 5%;
-}
-
-.invite {
-text-align: right;
 }
 
 
@@ -114,9 +135,41 @@ text-align: right;
 background-image: url("logowhite.png");
 background-repeat: no-repeat;
 background-position: center;
-height: 300px;
+height: 260px;
 width: 100%;
+margin-top: 2%;
 
+}
+
+#logo-signup {
+	background-image: url("logowhite.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 260px;
+	width: 100%;
+	margin-top: -12%;
+	
+}
+
+.registration {
+	margin-top: 15%; 
+	color: white;
+
+}
+
+.input-lg, .btn-file, .actions{
+	margin-top: 5%;
+	background: transparent;
+	color: white;
+}
+
+/*div.home-nav {
+	background-color: black;
+	height: 50px;
+	margin-top: -2%;
+}*/
+.invite {
+text-align: right;
 }
 
 .profile {
@@ -159,3 +212,44 @@ padding-left: 40px;
 	margin-left: 200px;
 	
 }
+
+#profile-image {
+	border-radius: 50px;
+	background-color: white;
+}
+
+
+.alert-success, .alert-danger{
+	background-color: white;
+	opacity: .75;
+    	filter: alpha(opacity=40);
+    	color: black;
+
+}
+
+
+@media screen and (max-width: 570px) {
+    .background {
+        height: 750px;
+    }
+
+    .welcome {
+
+    }
+
+    .back {
+    	margin-top: 3%;
+    }
+
+    .devise {
+    	margin-top: 3%;
+    }
+
+    .login1 {
+	text-align: center;
+	margin-top: 10%;
+	
+}
+
+}
+
