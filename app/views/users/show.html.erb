@@ -8,16 +8,16 @@
 		<div class="meetme col-md-12">
 			<h3> You sent <%= current_user.meetings.count%> meetme@ to your friends</h3>
 			
-			<% for meeting in current_user.meetings %>
+			<% current_user.meetings[0..2].each do |m|%>
 				<div class="meet-at">
-				<h4 ><%= meeting.name %> 
-				with <%=meeting.receiver.firstname.upcase%>
+				<h4 ><%= m.name %> 
+				with <%=m.receiver.firstname.upcase%>
 				
 				</h4>
 				
 
 			
-				<%= link_to "See detail", meeting_path(meeting), class: "btn btn-md btn-default no-border"%>
+				<%= link_to "See detail", meeting_path(m), class: "btn btn-md btn-default no-border"%>
 				<%#= link_to "Edit", edit_meeting_path(meeting, meeting.receiver_id), class: "btn btn-md btn-default back" %>
 				<%#= link_to "Remove", meeting, :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-md btn-default back" %>
 				</div>
@@ -26,11 +26,11 @@
 		</div> <!-- close meetme -->
 		<div class="meetme col-md-12">
 			<h3> You have <%=current_user.inverse_meetings.count%> from your friends</h3>
-			<% for inverse_meeting in current_user.inverse_meetings %>
+			<% current_user.inverse_meetings[0..2].each do |inverse| %>
 
 				<div class="meet-at">
-				<h4><%= inverse_meeting.name%> with <%=inverse_meeting.user.firstname.upcase %></h4>
-				<%= link_to "See detail", meeting_path(inverse_meeting), class: "btn btn-md btn-default no-border" %>
+				<h4><%= inverse.name%> with <%=inverse.user.firstname.upcase %></h4>
+				<%= link_to "See detail", meeting_path(inverse), class: "btn btn-md btn-default no-border" %>
 				</div>
 			<% end %>
 		</div><br>
