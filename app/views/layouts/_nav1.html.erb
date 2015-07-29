@@ -32,6 +32,7 @@
       </li>
           <li><a><h4>Hello <strong><%=current_user.firstname%></strong></h4></a></li>
          <li><a><%= image_tag current_user.image.url(:med)%></a></li>
+         <h4><%= link_to "Fun Events", searches_path, class: "btn btn-md btn-default back"%></h4>
     </ul>
     </div><!-- /.navbar-collapse -->
   </nav>

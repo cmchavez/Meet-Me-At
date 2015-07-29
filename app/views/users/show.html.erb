@@ -1,64 +1,59 @@
+<div class="container">
+	<div class="row">
 
-<p id="notice"><%= notice %></p>
+	<div class="col-md-6">
+		<p id="notice"><%= notice %></p>
 
-<div class="userprofile">
-	<%= image_tag current_user.image%><br>
-	Hello <%= current_user.firstname %><br>
+		<div class='row'>
+		<div class="meetme col-md-12">
+			<h2> You sent <%= current_user.meetings.count%> meetme@ to your friends</h2>
+			
+			<% for meeting in current_user.meetings %>
+			
+				<h4>meetme@ <%= meeting.name %> </h4>
+				<%# if meeting.reciever %>
+				with <%=meeting.receiver.firstname%>
+				<%#end%>
+				<h5><%#= meeting.description %></h5>
+
+			
+				<%= link_to "See detail", meeting_path(meeting) %>
+				<%= link_to "Edit", edit_meeting_path(meeting, meeting.receiver_id) %>
+				<%= link_to "Remove", meeting, :method => :delete, data: { confirm: 'Are you sure?' } %>
+			<%end%>
+			
+		</div> <!-- close meetme -->
 
 
+		<div class="meetme col-md-12">
+			<h2> You have <%=current_user.inverse_meetings.count%> from your friends</h2>
+			<% for inverse_meeting in current_user.inverse_meetings %>
+				<h4>meetme@<strong><%= inverse_meeting.name%></strong> with <%=inverse_meeting.user.firstname.upcase %></h4><br>
+				<%= link_to "See detail", meeting_path(inverse_meeting) %>
+				
+			<% end %>
+			
+		</div>
 
-<div class="contactlist" %>
-	<h4> You have <%=@total_friends.count %> contacts</h4>
-	<div class="firstfivefreinds">
-		<% current_user.friendships[0..4].each do |f| %>
-			<%= image_tag f.friend.image %>
-			<h3><%= f.friend.firstname%></h3>
-			<%= f.friend.email %><br>
-			<%= link_to "detail", friendship_path(f) %><br>
-			<%= link_to "remove", f, :method => :delete, data: { confirm: 'Are you sure?' } %><br>
-		<% end %>
-	</div>
-	<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-warning" %><br>
-	<br>
-	<%= link_to "Add New Contact", users_path, class: "btn btn-md btn-warning"%><br>
-</div>	
+		<%=link_to "Add a meetme@", new_meeting_path, class: "btn btn-md btn-default" %>
+	</div> <!-- close row -->
 
-<div class="meetme">
-	<h2> You sent <%= current_user.meetings.count%> meetme@ to your friends</h2>
+	<div class="contactlist col-md-12" %>
+
+		<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-default" %><br>
+		<br>
+		<%= link_to "Add New Contact", users_path, class: "btn btn-md btn-default"%><br>
+	</div>	<!-- close contact list -->
+
 	
-	<% for meeting in current_user.meetings %>
-	
-		<h4>meetme@ <%= meeting.name %> </h4>
-		<%# if meeting.reciever %>
-		with <%=meeting.receiver.firstname%>
-		<%#end%>
-		<h5><%#= meeting.description %></h5>
-
-	
-		<%= link_to "See detail", meeting_path(meeting) %>
-		<%= link_to "Edit", edit_meeting_path(meeting, meeting.receiver_id) %>
-		<%= link_to "Remove", meeting, :method => :delete, data: { confirm: 'Are you sure?' } %>
-	<%end%>
-	
-</div>
+	</div> <!-- close row -->
 
 
-<div>
-	<h2> You have <%=current_user.inverse_meetings.count%> from your friends</h2>
-	<% for inverse_meeting in current_user.inverse_meetings %>
-		<h4>meetme@<strong><%= inverse_meeting.name%></strong> with <%=inverse_meeting.user.firstname.upcase %></h4><br>
-		<%= link_to "See detail", meeting_path(inverse_meeting) %>
-		
-	<% end %>
-	
-</div>
-<%=link_to "Add a meetme@", new_meeting_path, class: "btn btn-md btn-warning" %>
+	<div id="map-canvas" class="col-md-6"></div>
 
-<h4><%= link_to "Find Friends", users_path, class: "btn btn-md btn-warning" %></h4>
-<h4><%= link_to "Fun Events", searches_path, class: "btn btn-md btn-warning"%></h4>
-</div>
+	</div> <!-- close row -->
 
-<div id="map-canvas"></div>
+</div> <!-- close container -->
 	
 
 
