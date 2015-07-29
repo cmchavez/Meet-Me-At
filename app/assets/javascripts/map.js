@@ -62,6 +62,7 @@ function initialize() {
             // The anchor for this image is the base of the flagpole at 0,32.
             anchor: new google.maps.Point(0, 32)
         };
+        
         my_map.setCenter(c);
 
         var currentlocation_marker = new google.maps.Marker({
@@ -154,8 +155,16 @@ function initialize() {
                 markers.push(marker)
 
                 // Add the coordinates to the bounds (so we can center the map)
-                bounds.extend(coord)
 
+                bounds.extend(coord)
+                if (promise_results.length >= 1) {
+                        map.fitBounds(bounds);
+                    }
+                    else{
+                        map.setCenter(c);
+                        map.setZoom(4);
+                    } 
+                console.log(promise_results)
                 // Create an info window
                 var infowindow = new google.maps.InfoWindow({
                     content: "<h1>" + results[i].name + "</h1>" + results[i].description
@@ -166,13 +175,7 @@ function initialize() {
             }
             // Center and fit the map using the bounds
 
-                    if (promise_results.length > 1) {
-                        map.fitBounds(bounds);
-                    }
-                    else{
-                        map.setCenter(c);
-                        map.setZoom(4);
-                    }  
+                     
             })
          
         })
