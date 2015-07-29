@@ -33,14 +33,18 @@
 				<%= link_to "See detail", meeting_path(inverse_meeting), class: "btn btn-md btn-default no-border" %>
 				</div>
 			<% end %>
+		</div><br>
+
+		<div class="col-md-12">
 				
-			<%=link_to "Add a meetme@", new_meeting_path, class: "btn btn-md btn-default" %>
+			<%=link_to "Add meetme@", new_meeting_path, class: "btn btn-md btn-default border" %>
 		</div>
+		
 
 		<div class="contactlist col-md-12" >
 
-		<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-default" %><br>
-		<%= link_to "Add New Contact", users_path, class: "btn btn-md btn-default"%><br>
+		<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-default border" %><br>
+		<%= link_to "Add New Contact", users_path, class: "btn btn-md btn-default border"%><br>
 		</div>	<!-- close contact list -->
 
 			
