@@ -6,16 +6,7 @@ body, html, main {
 height: 100%;
 }
 
-#map-canvas { 
-	width: 600px;
-	height: 600px; 
-	margin: 0; 
-	padding: 0;
-	text-align: center;
-	margin-right: 250px;
-	margin-left: 250px;
-	border-radius: 5px;
-}
+
 
 .nav_signup {
 	display: none;
@@ -327,4 +318,22 @@ a.navbar-brand > h4{
 .col { 
 
 }
+
+.left-box{
+	width: 50%;
+
+}
+
+#map-canvas { 
+	width: 50%;
+	height: 600px; 
+	margin: 0; 
+	padding: 0;
+	text-align: center;
+	margin-right: 250px;
+	margin-left: 250px;
+	border-radius: 5px;
+}
+
+
 
