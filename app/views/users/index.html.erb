@@ -1,21 +1,23 @@
-
 <h1>Checkout Other Users </h1>
 
 <% @users.each do |u| %>
 	
 	<tr>
-		<td><div id="profile-image"><%= u.firstname.upcase %></div></td><br>
-		<td><div id="profile-image"><%= image_tag u.image%></div></td><br>
-		
+		<td> <%= u.firstname.upcase %></td> <br>
+		<td> <%= image_tag u.image, :class=> "profile-image"%></td> <br>
+
 		<!-- <td><%#= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
 	                    "data-sid" => current_user.id, "data-rip" => u.id %>
 
       		</td><br> -->
 
-      		<td><%= link_to "Add to contact", friendships_path(:friend_id => u), :method => :post %></td><br>
+      		<td><%= link_to "Add to My Contacts", friendships_path(:friend_id => u), :method => :post, class: "btn btn-sm btn-warning" %></td><br>
       		<!-- <td><%#= link_to "Add a Meetme", new_meeting_path(:params =>{:receiver_id => u})%></td><br> -->
       	</tr>
-      	</div>
+
+      	
 <% end %>
 
+
+<%= link_to "My Profile", user_path(current_user) %>
 
