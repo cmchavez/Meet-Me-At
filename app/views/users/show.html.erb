@@ -1,60 +1,60 @@
 <div class="user-profile">
 	<div class="container">
-
-	<div class=" col-md-12">
 		<p id="notice"><%= notice %></p>
+		<div class='row'>
+		
 
 		<div class="left-box col-md-6">
+		<div class="row">
 		<div class="meetme col-md-12">
-			<h3> You sent <%= current_user.meetings.count%> meetme@ to your friends</h3>
+			<h3 class="btn"> You sent <%= current_user.meetings.count%> meetme@ to your friends</h3>
 			
-			<% for meeting in current_user.meetings %>
-				<div class="meet-at">
-				<h4 ><%= meeting.name %> 
-				with <%=meeting.receiver.firstname.upcase%>
+			<% current_user.meetings[0..2].each do |m|%>
+				<div class="meet-at btn btn-md btn-default ">
+				<h4 ><%= m.name %> 
+				with <%=m.receiver.firstname.upcase%>
 				
 				</h4>
 				
 
 			
-				<%= link_to "See detail", meeting_path(meeting), class: "btn btn-md btn-default no-border"%>
+				<%= link_to "See detail", meeting_path(m), class: "btn btn-md btn-default no-border"%>
 				<%#= link_to "Edit", edit_meeting_path(meeting, meeting.receiver_id), class: "btn btn-md btn-default back" %>
 				<%#= link_to "Remove", meeting, :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-md btn-default back" %>
-				</div>
+				</div> <!-- meet-at -->
 			<%end%>
 
 		</div> <!-- close meetme -->
 		<div class="meetme col-md-12">
-			<h3> You have <%=current_user.inverse_meetings.count%> from your friends</h3>
-			<% for inverse_meeting in current_user.inverse_meetings %>
+			<h3 class="btn"> You have <%=current_user.inverse_meetings.count%> from your friends</h3>
+			<% current_user.inverse_meetings[0..2].each do |inverse| %>
 
-				<div class="meet-at">
-				<h4><%= inverse_meeting.name%> with <%=inverse_meeting.user.firstname.upcase %></h4>
-				<%= link_to "See detail", meeting_path(inverse_meeting), class: "btn btn-md btn-default no-border" %>
-				</div>
+				<div class="meet-at btn btn-md btn-default">
+				<h4><%= inverse.name%> with <%=inverse.user.firstname.upcase %></h4>
+				<%= link_to "See detail", meeting_path(inverse), class: "btn btn-md btn-default no-border" %>
+				</div> <!-- meet-at -->
 			<% end %>
-		</div><br>
+		</div><!-- meetme -->
 
 		<div class="col-md-12">
 				
-			<%=link_to "Add meetme@", new_meeting_path, class: "btn btn-md btn-default border" %>
+			<%=link_to "new meetme@", new_meeting_path, class: "btn btn-md btn-default border" %>
 		</div>
 		
 
-		<div class="contactlist col-md-12" >
+		<!-- <div class="contactlist col-md-12" >
 
-		<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-default border" %><br>
-		<%= link_to "Add New Contact", users_path, class: "btn btn-md btn-default border"%><br>
-		</div>	<!-- close contact list -->
+		<%#= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-default border" %><br>
+		<%#= link_to "Add New Contact", users_path, class: "btn btn-md btn-default border"%><br>
+		</div>	<!- close contact list -->
 
-			
-		
-	</div>
+		</div>  <!-- row -->
+		</div> <!-- col-md-6   -->
 	<div id="map-canvas" class="col-md-6"></div>
 	
 	
-		</div> <!-- close col-md-12
- -->
+		
+	</div> <!-- close row -->
 	</div> <!-- close container-->
 
 </div> <!-- close user-profile -->
