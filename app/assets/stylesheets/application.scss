@@ -233,9 +233,14 @@ height: 100%;
 	border: none;
 	border-right: 2px solid white;
 
+
 	a {
 		margin-left: 5%;
 		color: white;
+	}
+
+	a > h4 {
+		color:#80FFFF;
 	}
 
 	.navbar-brand {
@@ -308,24 +313,50 @@ a.navbar-brand > h4{
 
 }
 
+.user-profile {
+	width: 70%;
+	margin-left: 15%;
+}
+
 
 #map-canvas { 
-	width: 40%;
-	height: 600px; 
+	width: 45%;
+	height: 630px; 
 	margin: 0; 
 	padding: 0;
 	text-align: center;
-	margin-top: 4%;
-	
+	margin-top: 1%;
 	
 }
 
 .left-box {
 	width: 45%;
-	height:600px;
+	height:630px;
 	background: black;
-	margin-left: 15%;
-	margin-top: 4%;
+	margin-top: 1%;
+	border-right: 4px solid white;
 
 }
+
+.meet-at {
+	border: 1px solid white;
+	margin-top: 1%;
+	color: white;
+}
+
+.meetme > h3{
+	color:#80FFFF;
+}
+
+.no-border{
+	width: 100px;
+	margin: 2%;
+	border:none;
+}
+
+.border {
+	margin-top: 1%;
+}
+
+
 

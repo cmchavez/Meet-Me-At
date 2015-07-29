@@ -130,6 +130,9 @@ function initialize() {
             map.mapTypes.set('map_style', styledMap);
             map.setMapTypeId('map_style');
 
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style');
+
             // Bounds are cool because they center our map for us
             var bounds = new google.maps.LatLngBounds()
 
@@ -161,15 +164,7 @@ function initialize() {
                 // Add the coordinates to the bounds (so we can center the map)
 
                 bounds.extend(coord)
-                if (promise_results.length >= 1) {
-                        map.fitBounds(bounds);
-                        map.setZoom(11);
-                    }
-                    else{
-                        map.setCenter(c);
-                        map.setZoom(4);
-                    } 
-                console.log(promise_results)
+
                 // Create an info window
                 var infowindow = new google.maps.InfoWindow({
                     content: "<h1>" + results[i].name + "</h1>" + results[i].description
@@ -179,7 +174,15 @@ function initialize() {
                 infowindow.open(map, markers[i])
             }
             // Center and fit the map using the bounds
-
+              if (promise_results.length >= 1) {
+                        
+                        map.fitBounds(bounds);
+                        
+                    }
+                    else{
+                        map.setCenter(c);
+                        map.setZoom(10);
+                    } 
                      
             })
          
