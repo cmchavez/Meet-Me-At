@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
-  has_attached_file :image, :styles => { small: "64x64", med: "100x100", large: "200x200" }, :default_url =>"robot.png"
+  has_attached_file :image, :styles => { small: "64x64", med: "100x100", large: "150x150" }, :default_url =>"default_profile.png"
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   has_many :sent_invitations, :class_name => 'Invitation', :foreign_key => 'sender_id'
