@@ -1,8 +1,10 @@
+<div class="user-profile">
+	<div class="container">
 
-	<div class=" left-box col-md-6">
+	<div class=" col-md-12">
 		<p id="notice"><%= notice %></p>
 
-		<div class='row'>
+		<div class="left-box col-md-6">
 		<div class="meetme col-md-12">
 			<h2> You sent <%= current_user.meetings.count%> meetme@ to your friends</h2>
 			
@@ -19,10 +21,7 @@
 				<%= link_to "Edit", edit_meeting_path(meeting, meeting.receiver_id) %>
 				<%= link_to "Remove", meeting, :method => :delete, data: { confirm: 'Are you sure?' } %>
 			<%end%>
-			
 		</div> <!-- close meetme -->
-
-
 		<div class="meetme col-md-12">
 			<h2> You have <%=current_user.inverse_meetings.count%> from your friends</h2>
 			<% for inverse_meeting in current_user.inverse_meetings %>
@@ -30,25 +29,26 @@
 				<%= link_to "See detail", meeting_path(inverse_meeting) %>
 				
 			<% end %>
-			
+			<%=link_to "Add a meetme@", new_meeting_path, class: "btn btn-md btn-default" %>
 		</div>
-
-		<%=link_to "Add a meetme@", new_meeting_path, class: "btn btn-md btn-default" %>
-	</div> <!-- close row -->
-
-	<div class="contactlist col-md-12" %>
+		<div class="contactlist col-md-12" %>
 
 		<%= link_to "All Contacts", friendships_path(current_user), class: "btn btn-md btn-default" %><br>
 		<br>
 		<%= link_to "Add New Contact", users_path, class: "btn btn-md btn-default"%><br>
-	</div>	<!-- close contact list -->
+		</div>	<!-- close contact list -->
 
+			
+		
+	</div>
+	<div id="map-canvas" class="col-md-6"></div>
 	
-	</div> <!-- close row -->
+	
+		</div> <!-- close col-md-12
+ -->
+	</div> <!-- close container-->
 
-
-	<div id="map-canvas" class="right-box col-md-6"></div>
-
+</div> <!-- close user-profile -->
 	
 
 
