@@ -7,38 +7,32 @@ height: 100%;
 }
 
 #map-canvas { 
-width: 600px;
-height: 600px; 
-margin: 0; 
-padding: 0;
-text-align: center;
-margin-right: 250px;
-margin-left: 250px;
-border-radius: 5px;
-
+	width: 600px;
+	height: 600px; 
+	margin: 0; 
+	padding: 0;
+	text-align: center;
+	margin-right: 250px;
+	margin-left: 250px;
+	border-radius: 5px;
 }
 
 .nav_signup {
 	display: none;
 	float:right;
 	margin-top: 2%;
-
 }
 
 .navbar-default {
 	background: transparent;
 	color:white;
-	
-	
 }
 
 
 .form-inline .form-control {
 	background: transparent;
 	color: white;
-
 }
-
 
 .btn-default {
 	background: transparent;
@@ -47,8 +41,6 @@ border-radius: 5px;
 	border-radius: 0px;
 	width: 250px;
 }
-
-
 
 .btn-primary {
 	background-color: transparent;
@@ -72,59 +64,52 @@ border-radius: 5px;
 }
 
 .background {
-background: url("filter4.jpg") no-repeat center center fixed;
-/*background-attachment: fixed;*/
-background-size: cover;
-height:100%;
-margin-top: 0px;
-width: 100%;
+	background: url("filter4.jpg") no-repeat center center fixed;
+	/*background-attachment: fixed;*/
+	background-size: cover;
+	height:100%;
+	margin-top: 0px;
+	width: 100%;
 }
 
 .welcome {
-margin-bottom: 0px;
-font-family: 'Josefin Sans', sans-serif;
-font-size: 20px;
-font-color: white;
-text-align: center;
-width: 100%;
+	margin-bottom: 0px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-color: white;
+	text-align: center;
+	width: 100%;
 }
 
 #greeting {
 	color:white;
-	
 }
 
 .login {
 	color:white;
-
 }
 
 .login1 {
 	text-align: center;
 	margin-top: 2%;
-
 }
 
 .back {
 	width: 100px;
 	margin: 2%;
-
-	
 }
 
 .signin {
-display: none;
-color: white;
-padding-top: 10px;
-text-align: center;
-border-radius: 10px;
-
+	display: none;
+	color: white;
+	padding-top: 10px;
+	text-align: center;
+	border-radius: 10px;
 }
 
 .form-group{
 	margin-top: 5%;
 }
-
 
 .signin:hover {
     opacity: 1.0;
@@ -132,13 +117,12 @@ border-radius: 10px;
  }
 
 #logo {
-background-image: url("logowhite.png");
-background-repeat: no-repeat;
-background-position: center;
-height: 260px;
-width: 100%;
-margin-top: 2%;
-
+	background-image: url("logowhite.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 260px;
+	width: 100%;
+	margin-top: 2%;
 }
 
 #logo-signup {
@@ -148,13 +132,11 @@ margin-top: 2%;
 	height: 260px;
 	width: 100%;
 	margin-top: -12%;
-	
 }
 
 .registration {
 	margin-top: 15%; 
 	color: white;
-
 }
 
 .input-lg, .btn-file, .actions{
@@ -169,23 +151,20 @@ margin-top: 2%;
 	margin-top: -2%;
 }*/
 .invite {
-text-align: right;
+	text-align: right;
 }
 
 .profile {
-background-color: white;
-list-style-position: inline; 
+	background-color: white;
+	list-style-position: inline; 
 }
 
 .friended {
-background-color: white;
-}
-
-.profilepage {
-background-color: white;
+	background-color: white;
 }
 
 .userprofile {
+
 font-color: white;
 margin-top: 0px;
 background-color: white;
@@ -198,8 +177,14 @@ padding-top: 50px;
 padding-right: 45px;
 padding-bottom: 40px;
 padding-left: 40px;
+
 }
 
+.profile-image {
+	border-radius: 10px;
+	background-color: white;
+	border-right: 1px solid #000;
+}
 
 .friendlist {
 	width: 70%;
@@ -226,7 +211,6 @@ padding-left: 40px;
     	color: red;
     	height: 40px;
     	border-radius: 0px;
-
 }
 
 
@@ -330,6 +314,10 @@ a.navbar-brand > h4{
     margin-right: 0;
     color: white;
 }
+
+}
+/*users index div below*/
+.col { 
 
 }
 
