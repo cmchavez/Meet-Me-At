@@ -283,7 +283,20 @@ height: 100%;
 }
 }
 /*users index div below*/
-.col { 
-
+.columns { 
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top:0;
+}
+/*users index div below*/
+.col {
+	font-weight: bold;
+	background-color:rgba(192,192,192,0.3);
 }
 
+#myprofilebutton {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: -525px;
+}
