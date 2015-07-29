@@ -48,6 +48,8 @@ function initialize() {
     //Associate the styled map with the MapTypeId and set it to display.
   my_map.mapTypes.set('map_style', styledMap);
   my_map.setMapTypeId('map_style');
+
+
     
 
     navigator.geolocation.getCurrentPosition(function(res){
@@ -125,6 +127,8 @@ function initialize() {
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
             var map = new google.maps.Map(el, mapProps)
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style');
 
             // Bounds are cool because they center our map for us
             var bounds = new google.maps.LatLngBounds()
@@ -159,6 +163,7 @@ function initialize() {
                 bounds.extend(coord)
                 if (promise_results.length >= 1) {
                         map.fitBounds(bounds);
+                        map.setZoom(11);
                     }
                     else{
                         map.setCenter(c);
