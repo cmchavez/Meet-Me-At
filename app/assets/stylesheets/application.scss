@@ -258,8 +258,12 @@ padding-left: 40px;
 		color: white;
 	}
 
-	.navbar-brand > h4 {
+	.navbar-brand {
+	background-image: url("logo150.png");
+	height: 120px;
+	width: 130px;
 	color:white;
+	margin-left: -20%;
 	}
 
 	.navbar-nav > li > a {
@@ -297,7 +301,7 @@ padding-left: 40px;
 
 .navbar
 {
-	max-width:200px;
+	max-width:150px;
 	margin-right: 0;
 	margin-left: 0;
 }
