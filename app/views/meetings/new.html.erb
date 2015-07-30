@@ -1,4 +1,4 @@
-<div class="container" id="wrap1">
+<div class="container meetme-form" id="wrap1">
 	
       		<div class="row new-meetme">
       		<h2>Add new meetme@</h2>
@@ -7,20 +7,24 @@
 			<%= form_for @meeting do |m| %>
 
 				<div class="row">
-				<div class="field col-xs-4 col-md-4">
-				<p>Friend: <%= m.collection_select :receiver_id, @total_friends, :id, :firstname %>
-				</div>
-				<div class="field col-xs-8 col-md-8">
-				
-				<p>Date: <%= m.date_select :date%></p>
-				</div>
-				</div>
-				<div class="row">
       				<div class="field col-xs-6 col-md-6">
 				<p><%= m.text_field :name, autofocus: true, :class=>"form-control input-lg", :placeholder=>"meetme@ name" %></p>
 				</div>
 				<div class="field col-xs-6 col-md-6">
 				<p><%= m.text_field :location, autofocus: true, :class=>"form-control input-lg", :placeholder=>"Address"%></p><br>
+				</div>
+				</div>
+
+				<div class="row">
+				<div class="field col-xs-12 col-md-12">
+				<p>Friend: <%= m.collection_select :receiver_id, @total_friends, :id, :firstname %>
+				</div>
+				</div>
+				<div class="row">
+				<div class="field col-xs-12 col-md-12">
+				
+				<p>Date: <%= m.date_select :date%></p>
+				</div>
 				</div>
 				
 				<div class="row">
@@ -36,3 +40,5 @@
 
 
  </div>
+
+ <div id="map-canvas" class="hidden"></div>

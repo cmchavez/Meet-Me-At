@@ -5,6 +5,7 @@ $(document).on("page:load", toggle);
 function toggle(){
 	
 	$(".navbar-toggle").click(function(){
-	$(".user-profile").toggle("slow")
+	$(".user-profile").toggle("fast");
+	$(".meetme-form").toggle("fast");
 	});
 }
