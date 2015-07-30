@@ -8,9 +8,11 @@ class InvitesController < ApplicationController
 			@invite = Invite.between(params[:sender_id],params[:recipient_id]).first
 		else
 			@invite = Invite.create!(invite_params)
+			redirect_to current_user
 		end
 
 		render json: { invite_id: @invite.id }
+		redirect_to current_user
 	end
 
 	def show
