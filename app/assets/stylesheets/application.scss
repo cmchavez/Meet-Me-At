@@ -221,6 +221,46 @@ height: 100%;
     	margin-top: -3%;
     }
 
+    div.left-box {
+    	width: 120%;
+    	margin-top: 18%;
+    	margin-left: -10%;
+    	position: relative;
+    	z-index: 0;
+    	
+    }
+
+    div#map-canvas{
+    	width: 120%;
+    	margin-left: -10%;
+
+    }
+
+    .navbar-brand{
+    	margin-top: 3%;
+    	
+    	
+    }
+
+    .meet-at > h4 {
+    	font-size: 12px;
+    }
+
+    .navbar-collapse.in {
+    	background-color: black;
+    	width: 100%;
+    	position: relative;
+    	z-index: 1;
+    }
+
+    .bar-name{
+    	border-bottom: 1px white solid;
+   
+    }
+
+ 
+
+
 }
 
 .navbar-default {
@@ -244,11 +284,7 @@ height: 100%;
 	}
 
 	.navbar-brand {
-	background-image: url("logo150.png");
-	height: 120px;
-	width: 130px;
 	color:white;
-	margin-left: -20%;
 	}
 
 	.navbar-nav > li > a {
@@ -264,48 +300,45 @@ height: 100%;
 
 
 @media (min-width: 768px) {
-  .navbar-collapse {
-    height: auto;
-    border-top: 0;
-    box-shadow: none;
-    max-height: none;
-    padding-left:0;
-    padding-right:0;
+	  .navbar-collapse {
+	    height: auto;
+	    border-top: 0;
+	    box-shadow: none;
+	    max-height: none;
+	    padding-left:0;
+	    padding-right:0;
+	  }
 
- 
-  }
-  .navbar-collapse.collapse {
-    display: block !important;
-    width: auto !important;
-    padding-bottom: 0;
-    overflow: visible !important;
-  }
-  .navbar-collapse.in {
-    overflow-x: visible;
-  }
+	  .navbar-collapse.collapse {
+	    display: block !important;
+	    width: auto !important;
+	    padding-bottom: 0;
+	    overflow: visible !important;
+	  }
 
-.navbar
-{
-	max-width:150px;
-	margin-right: 0;
-	margin-left: 0;
-}
+	  .navbar-collapse.in {
+	    overflow-x: visible;
+	  }
 
-.navbar-nav,
-.navbar-nav > li,
-.navbar-left,
-.navbar-right,
-.navbar-header
-{float:none !important;}
-a.navbar-brand > h4{
-	color:white;
-}
+	.navbar
+	{
+		max-width:150px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	
 
-.navbar-right .dropdown-menu {left:0;right:auto; color:white;}
-.navbar-collapse .navbar-nav.navbar-right:last-child {
-    margin-right: 0;
-    color: white;
-}
+	.navbar-nav,
+	.navbar-nav > li,
+	.navbar-left,
+	.navbar-right,
+	.navbar-header{float:none !important;}
+
+	.navbar-right .dropdown-menu {left:0;right:auto; color:white; }
+	.navbar-collapse .navbar-nav.navbar-right:last-child {
+	    margin-right: 0;
+	    color: white;
+	}
 
 }
 /*users index div below*/
@@ -316,6 +349,7 @@ a.navbar-brand > h4{
 .user-profile {
 	width: 70%;
 	margin-left: 15%;
+	
 }
 
 
@@ -334,7 +368,7 @@ a.navbar-brand > h4{
 	height:630px;
 	background: black;
 	margin-top: 1%;
-	border-right: 4px solid white;
+	
 
 }
 
@@ -342,7 +376,11 @@ a.navbar-brand > h4{
 	border: 1px solid white;
 	margin-top: 1%;
 	color: white;
+	border-radius: none;
+	width: 100%;
+
 }
+
 
 .meetme > h3{
 	color:#80FFFF;
@@ -362,4 +400,6 @@ a.navbar-brand > h4{
 	margin-top: 10%;
 	color:white;
 }
+
+
 
