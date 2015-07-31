@@ -1,0 +1,28 @@
+<div class="results">
+
+<% if @results %>
+<%=@name %>
+<br>
+
+<h3>There are <strong><%=@results.length%></strong> near this area</h3>
+<%@results.each do |r|%>
+	<% if r["venue"]%>
+	<ul><h4><%= r["name"]%></h4>
+	Address: <%= r["venue"]["address_1"]%>,<%= r["venue"]["city"]%>,<%= r["venue"]["zip"]%>,<%= r["venue"]["state"]%><br>
+
+	Link to detail: <%= r["event_url"]%><br>
+
+	ID: <%= r["created"]%><br>
+	<%= link_to "Add this to your Meetme@", new_search_path(:params => {:name => r["name"], :location => r["venue"]["zip"] , :description => r["event_url"], :meeting => r["created"]}), class: "btn btn-default btn-lg login" %>
+
+
+		<% end %>
+	</ul>
+
+	
+<%end %>
+
+
+
+<% end %>
+</div>
