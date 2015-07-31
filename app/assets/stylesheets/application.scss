@@ -258,36 +258,26 @@ height: 100%;
    
     }
 
-    .results {
-	width: 100%;
-	
-	
-	}
-
     ul.result.col-md-12 {
 	
 	width: 100%;
-	margin: 0 auto;
 	border: 1px solid white;
+	margin: 0 auto;
 	
 	}
 
-	h4.btn.btn-lg.btn-default.no-border {
-		width: 100%;
-		font-size: 13px;
-		margin: 0 auto;
-		margin-left: -5%;
-		text-align: center;
 
-	}
+   ul>h4.btn.btn-lg.btn-default.no-border {
+   	font-size: 15px;
 
-	p.btn.btn-lg.btn-default.no-border{
-		width: 100%;
-		font-size: 12px;
-		margin: 0 auto;
-		text-align: center;
-	}
+   }
 
+   ul>p.btn.btn-lg.btn-default.no-border {
+   	font-size: 12px;
+   }
+
+
+	
     
 
 }
@@ -369,9 +359,7 @@ height: 100%;
 
 }
 /*users index div below*/
-.col { 
 
-}
 
 .user-profile {
 	width: 70%;
