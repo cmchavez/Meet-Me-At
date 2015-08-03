@@ -1,16 +1,44 @@
-<%= form_tag "/meetings", method: :post do %>
-<h4>Friend</h4>
-<p><%= select_tag "meeting[receiver_id]", options_from_collection_for_select(@total_friends, "id", "firstname") %></p>
-<%#= text_field_tag "meeting[receiver_id]" %>
-<h4> Event name: <h4>
-<p><%= text_field_tag "meeting[name]", params[:name] %></p><br>
-<h4>Location</h4>
-<p><%= text_field_tag "meeting[location]", params[:location]%></p><br>
-<h4>Description</h4> 	 	
-<p><%= text_field_tag "meeting[description]", params[:description] %></p><br>
-<p><%= submit_tag"Add to meetme@"%></p>
-<% end %>
+<div class='search-new'>
 
+<div class="container meetme-form">
+
+	<div class="row new-meetme">
+	<h1 class="welcome">Add to meetme@</h1>
+	
+		
+
+		<div class= " form-inline">
+
+			<%= form_tag "/meetings", method: :post do %>
+
+				<div class="form-group">
+					<h4>Friend:</h4>
+					<p><%= select_tag "meeting[receiver_id]", options_from_collection_for_select(@total_friends, "id", "firstname") %></p>
+				</div>
+				<div class="form-group">
+				<%#= text_field_tag "meeting[receiver_id]" %>
+					<h4> Event name: </h4>
+					<p><%= text_field_tag "meeting[name]", params[:name], :class=>"form-control input-lg" %></p><br>
+				</div>
+
+				<div class="form-group">
+					<h4>Location</h4>
+					<p><%= text_field_tag "meeting[location]", params[:location], :class=>"form-control input-lg"%></p><br>
+				</div>
+
+				<div class="form-group">
+					<h4>Description</h4> 	 	
+					<p><%= text_field_tag "meeting[description]", params[:description], :class=>"form-control input-lg"%></p><br>
+				</div>
+
+				<p><%= submit_tag"Add to meetme@", class: "btn btn-default btn-lg"%></p>
+			<% end %>
+
+
+			</div>
+		</div>
+	</div>
+</div>
 
 
 

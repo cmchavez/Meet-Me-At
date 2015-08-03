@@ -1,18 +1,35 @@
 <div class="friendlist">
-<h2> Your have <%= @total_friends.count %> friends </h2>
+
+<div class="container">
+
+	<div class="row all-friends">
+
+
+<h2 class="our-users"> Your have <%= @total_friends.count %> friends </h2>
+
 <% for friendship in current_user.friendships %>
-	<%= image_tag friendship.friend.image %><br>
-	Name: <%= friendship.friend.firstname %><br>
-	Email: <%= friendship.friend.email %><br>
-	<%= link_to "remove", friendship, :method => :delete, class: "btn btn-medium btn-warning" %><br>
-	<%= link_to "See detail", friendship_path(friendship) %><br>
+
+	<div class="user col-md-4">
+	<td class="col-md-12"><%= image_tag friendship.friend.image(:med), :class=> "profile-image" %></td><br>
+	<td class="col-md-12">Name: <%= friendship.friend.firstname %><%=friendship.friend.lastname%></td><br>
+	<td class="col-md-12">Email: <%= friendship.friend.email %></td><br>
+	<%= link_to "remove", friendship, :method => :delete, class: "btn no-border" %><br>
+	<%= link_to "See detail", friendship_path(friendship), class: "btn no-border" %><br>
+
+	</div>
 <% end %>
 
 
-
+	<div class="col-md-12">
 <% for user in current_user.inverse_friends %>
-	<%= image_tag user.image(:large) %><br>
-	Name: <%= user.firstname %><br>
-	Email: <%= user.email%><br>
+	<div class="user col-md-4">
+	<td class="col-md-12"><%= image_tag user.image(:med), :class=> "profile-image"  %></td><br>
+	<td class="col-md-12">Name: <%= user.firstname %></td><br>
+	<td class="col-md-12">Email: <%= user.email%></td><br>
+	</div>
 <% end %>
+</div>
+</div>
+
+</div>
 </div>

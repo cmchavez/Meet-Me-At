@@ -1,10 +1,27 @@
-<h1>Invite a Friend</h1>
-<%= form_for(@emailinvitation) do |f| %>
-	<p>
-		<%= f.label :recipient_email, "Friend's Email Address:" %><br>
-		<%= f.text_field :recipient_email %>
-	</p>
+<div class='friend'>
 
-	<p><%= f.submit "Invite Now!", class: "btn btn-sm btn-warning" %></p>
+<div class="container">
 
-<% end %>
+<div class= "row invite-friend">
+<h1 class='btn btn-lg'>Invite a Friend</h1>
+
+	<div class="form-inline">
+		<%= form_for(@emailinvitation) do |f|%>
+
+			<div class="form-group">
+			
+				<%= f.label :recipient_email, "Friend's Email Address:", :class =>"sr-only"%>
+				<%= f.text_field :recipient_email, autofocus: true, :class=>"form-control input-lg", placeholder:"Email address" %><br>
+			
+			</div>
+			
+				<p><%= f.submit "Invite Now!", class: "btn btn-default back" %></p>
+			
+
+		<% end %>
+
+	</div>
+</div> 
+
+</div>
+</div>

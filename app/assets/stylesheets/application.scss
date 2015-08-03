@@ -3,19 +3,9 @@
 @import "bootstrap";
 
 body, html, main {
-height: 100%;
+	height: 100%;
 }
 
-#map-canvas { 
-	width: 600px;
-	height: 600px; 
-	margin: 0; 
-	padding: 0;
-	text-align: center;
-	margin-right: 250px;
-	margin-left: 250px;
-	border-radius: 5px;
-}
 
 .nav_signup {
 	display: none;
@@ -76,7 +66,7 @@ height: 100%;
 	margin-bottom: 0px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 20px;
-	font-color: white;
+	color: white;
 	text-align: center;
 	width: 100%;
 }
@@ -112,8 +102,8 @@ height: 100%;
 }
 
 .signin:hover {
-    opacity: 1.0;
-    filter: alpha(opacity=100);
+	opacity: 0.9;
+	filter: alpha(opacity=100);
  }
 
 #logo {
@@ -164,6 +154,7 @@ height: 100%;
 }
 
 .userprofile {
+
 	font-color: white;
 	margin-top: 0px;
 	background-color: white;
@@ -171,30 +162,20 @@ height: 100%;
 	margin-left: 300px;
 	border-radius: 5px;
 	opacity: .75;
-	    filter: alpha(opacity=40);
+	filter: alpha(opacity=40);
 	padding-top: 50px;
 	padding-right: 45px;
 	padding-bottom: 40px;
 	padding-left: 40px;
+
 }
 
 .profile-image {
-	border-radius: 10px;
 	background-color: white;
-	border-right: 1px solid #000;
+	margin-top: 3%;
 }
 
-.friendlist {
-	width: 70%;
-	height: 900px;
-	background-color: white;
-	opacity: .75;
-    	filter: alpha(opacity=40);
-    	padding: 50px;
-    	margin-right: 200px;
-	margin-left: 200px;
-	
-}
+
 
 #profile-image {
 	border-radius: 50px;
@@ -213,75 +194,369 @@ height: 100%;
 
 
 @media screen and (max-width: 768px) {
-    .background {
-        height: 750px;
-    }
+	.background {
+		height: 750px;
+	}
 
-    .welcome {
+   	
+	.back {
+	    	margin-top: 3%;
+	}
 
-    }
+	.devise {
+	    	margin-top: 3%;
+	}
 
-    .back {
-    	margin-top: 3%;
-    }
+	.login1 {
+		text-align: center;
+		margin-top: 10%;
+	}
 
-    .devise {
-    	margin-top: 3%;
-    }
+	.checkbox {
+	    	margin-top: -3%;
+	    }
 
-    .login1 {
-	text-align: center;
-	margin-top: 10%;
+	div.left-box {
+		width: 120%;
+		margin-top: 18%;
+		margin-left: -10%;
+		position: relative;
+		z-index: 0;
+
+	}
+
+	div#map-canvas{
+		width: 120%;
+		margin-left: -10%;
+
+	}
+
+	div.navbar-header{
+		background-color: white;
+		margin-left: -4%;
+		height: 90%;
+		color: black;
+		opacity: 0.9;
+		filter: alpha(opacity=100);
+
+	}
+
+	button.navbar-toggle {
+		background-color: black;
+		color: white;
+		margin-top: 1%;
+	}
+
+	div.navbar-header > a.navbar-brand{
+		color: black;
+
+		
+		
+	}
+
+	.meet-at > h4 {
+		font-size: 12px;
+	}
+
+	.navbar-collapse.in {
+		background-color: black;
+		width: 100%;
+		margin-left: -4%;
+		opacity: 0.9;
+		filter: alpha(opacity=100);
+		
+	}
+
+
+
+	.bar-name{
+		border-bottom: 1px white solid;
+		color: black;
+
+	}
+
+	ul.results.col-md-12 {
+
+		width: 110%;
+		border: 1px solid white;
+		margin-left: -5%;
+		margin-right: -5%;
+		position: inherit;
+
+	}
+
+	ul.result {
+		width: 110%;
+		margin-left: -4%;
+		text-align: center;
+		border: none;
+		position: inherit;
+	}
+
+
+	ul>h4.btn.btn-lg.btn-default.no-border {
+		font-size: 15px;
+		text-align: center;
+		margin: 0 auto;
+		color:#80FFFF;
+		position: inherit;
+		
+
+	}
+
+	ul>p.btn.btn-lg.btn-default.no-border {
+		font-size: 14px;
+		text-align: center;
+		position: inherit;
+		
+	}
+
+	div.row.search-box {
+		margin-top: 20%;
+		margin-left: -1%;
+		color: white;
+		position: inherit;
+
+	}
+
+	nav.navbar.navbar-default {
+		height: 5%;
+		background-color: transparent;
+	}
+
+
+
+	div.row.new-meetme{
+		margin-top: 20%;
+    		margin-left: -1%;
+    		color: white;
+    		position: inherit;
+    		
+
+	}
+
+	div.row.new-meetme > form {
+		position: inherit;
+	}
+
+	div.row.users {
+		width: 100%;
+		margin-top: 10%;
+		margin-left: 15%;
+		text-align: center;
+	}
+
+
+	div.row.users > div.user {
+		width: 90%;
+		background-color: black;
+		position: inherit;
+		
+	}
+
+	div.row.users > h1.our-users{
+		margin-top: 10%;
+		margin-left: 3%;
+		font-size: 24px;
+		width: 90%;
+		background-color: black;
+		position: inherit;
+		
+	}
+
+	div.row.allmeetme {
+		width: 100%;
+		margin-top: 20%;
+		margin-left: -1%;
+	}
+
+	div.row.allmeetme > h3.our-users {
+		margin-top: 10%;
+		margin-left: 4%;
+		font-size: 24px;
+		width: 90%;
+		background-color: black;
+		position: inherit;
+	}
+
+	div.meet-at.btn.btn-md.btn-default {
+
+		background-color: black;
+		h4 {
+			font-size: 16px;
+		}
+
+		position: inherit;
+
+	}
+
+	div.row.userpage {
+		width: 100%;
+	}	
+
+	div.col-md-12.user-box {
+		width: 80%;
+		margin-left: 13%;
+		margin-top: 25%;
+		padding-top: 4%;
+		padding-bottom: 4%;
+		position: inherit;
+	}
+
+	div.row.all-friends{
+		width: 100%;
+		margin-top: 10%;
+		text-align: center;
+
+		h2.our-users {
+			margin-top: 10%;
+			margin-left: 4%;
+			font-size: 24px;
+			width: 90%;
+			background-color: black;
+			position: inherit;
+		}
+
+		.user.col-md-4 {
+			width: 90%;
+			background-color: black;
+			position: inherit;
+
+		}
+	}
+
+
+
 	
-    }
+ }
 
-    .checkbox {
-    	margin-top: -3%;
-    }
+.navbar-default {
+	border-radius: 0px;
+	background-color: transparent;
+	position: fixed;
+	width: 100%;
+	height: 680px;
+	text-align: left;
+	border: none;
+	border-right: 2px solid white;
+
+
+	a {
+		margin-left: 5%;
+		color: white;
+	}
+
+	a > h4 {
+		color:#80FFFF;
+	}
+
+	.navbar-brand {
+		color:white;
+	}
+
+	.navbar-nav > li > a {
+		color:white;
+	}
+
+	
 
 }
-
 
 
 
 @media (min-width: 768px) {
-  .navbar-collapse {
-    height: auto;
-    border-top: 0;
-    box-shadow: none;
-    max-height: none;
-    padding-left:0;
-    padding-right:0;
-  }
-  .navbar-collapse.collapse {
-    display: block !important;
-    width: auto !important;
-    padding-bottom: 0;
-    overflow: visible !important;
-  }
-  .navbar-collapse.in {
-    overflow-x: visible;
-  }
+	  .navbar-collapse {
+		    height: auto;
+		    border-top: 0;
+		    box-shadow: none;
+		    max-height: none;
+		    padding-left:0;
+		    padding-right:0;
+	  }
 
-.navbar
-{
-	max-width:200px;
-	margin-right: 0;
-	margin-left: 0;
-}	
 
-.navbar-nav,
-.navbar-nav > li,
-.navbar-left,
-.navbar-right,
-.navbar-header
-{float:none !important;}
+	  .navbar-collapse.collapse {
+		    display: block !important;
+		    width: auto !important;
+		    padding-bottom: 0;
+		    overflow: visible !important;
+	  }
 
-.navbar-right .dropdown-menu {left:0;right:auto;}
-.navbar-collapse .navbar-nav.navbar-right:last-child {
-    margin-right: 0;
+	  .navbar-collapse.in {
+		  overflow-x: visible;
+	  }
+
+	
+	.navbar
+	{
+		max-width:150px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	
+
+	.navbar-nav,
+	.navbar-nav > li,
+	.navbar-left,
+	.navbar-right,
+	.navbar-header{float:none !important;}
+
+	.navbar-right .dropdown-menu {left:0;right:auto; color:white; }
+	.navbar-collapse .navbar-nav.navbar-right:last-child {
+		    margin-right: 0;
+		    color: white;
+	}
+
 }
+/*users index div below*/
+
+
+.user-profile {
+	width: 70%;
+	margin-left: 15%;
+	
 }
+
+
+#map-canvas { 
+	width: 45%;
+	height: 630px; 
+	margin: 0; 
+	padding: 0;
+	text-align: center;
+	margin-top: 1%;
+	
+}
+
+.left-box {
+	width: 45%;
+	height:630px;
+	background: black;
+	margin-top: 1%;
+	
+
+}
+
+.meet-at {
+	border: 1px solid white;
+	margin-top: 1%;
+	color: white;
+	border-radius: none;
+	width: 100%;
+
+}
+
+
+.meetme > h3{
+	color:#80FFFF;
+}
+
+.no-border{
+	width: 100px;
+	margin: 2%;
+	border:none;
+}
+
 /*users index div below*/
 .columns { 
     border: 1px solid black;
@@ -304,5 +579,174 @@ height: 100%;
 }
 h1 {
 	color: white;
+
+
+.border {
+	margin-top: 1%;
 }
+
+.new-meetme {
+	margin-top: 15%;
+	color:white;
+	position: relative;
+}
+
+.invite-friend{
+
+	color:white;
+	width: 30%;
+	margin: 0 auto;
+	margin-top: 20%;
+	margin-bottom: 5%;
+}
+
+
+
+.search-box {
+	margin: 0 auto;
+	margin-top: 20%;
+	margin-left: 10%;
+	color: white;
+	z-index: 1;
+
+}
+
+.results {
+	width: 100%;
+	text-align: center;
+	
+}
+
+.results > h3 {
+	margin-left: 8%;
+	color: #80FFFF;
+}
+
+.result {
+	
+	width: 80%;
+	margin: 0 auto;
+	margin-left: 10%;
+	margin-bottom: 2%;
+	border: 1px solid white;
+	
+}
+
+h4.btn.btn-lg.btn-default.no-border {
+	width: 100%;
+	font-size: 24px;
+	margin: 0 auto;
+	text-align: center;
+
+}
+
+h4.btn.btn-lg.btn-default.no-border:hover {
+	background-color: transparent;
+	color:white;
+}
+
+
+p.btn.btn-lg.btn-default.no-border {
+	width: 100%;
+	font-size: 16px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+p.btn.btn-lg.btn-default.no-border:hover{
+	background-color: transparent;
+	color:white;
+}
+
+div.users {
+	margin-top: 5%;
+	margin-left: 15%;
+}
+
+div.user.col-md-4 {
+	color: white;
+	border: 1px white solid;
+	padding-bottom: 2%;
+	padding-top: 2%;
+	margin-top: 5%;
+	width: 30%;
+	margin-left: 3%;
+	background-color: black;
+	
+}
+
+div.user.col-md-4 > td {
+	margin-top: 3%;
+}
+
+h1.our-users{
+	font-size: 30px;
+	border: 1px white solid;
+	width: 20%;
+	margin: 0 auto;
+	margin-left: 37%;
+}
+
+
+
+.our-users {
+	font-size: 30px;
+	border: 1px white solid;
+	width: 40%;
+	margin: 0 auto;
+	margin-left: 27%;
+	margin-top: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background-color: black;
+	opacity: 0.9;
+	filter: alpha(opacity=100);
+
+
+}
+
+
+.user-map {
+	width: 100%;
+	border: 5px black solid;
+}
+
+.allmeetme {
+	margin-left: 15%;
+}
+
+div.meet-at.btn.btn-md.btn-default {
+		background-color: black;
+		opacity: 0.9;
+		filter: alpha(opacity=100);
+
+}
+
+div.userpage {
+	text-align: center;
+	width: 100%;
+	
+}
+
+.user-box {
+
+	width: 50%;
+	border: 1px white solid;
+	margin: 0 auto;
+	margin-top:  15%;
+	background-color: black;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.all-friends{
+	margin-left: 15%;
+	font-size: 14px;
+}
+
+
+
+
+
+
 

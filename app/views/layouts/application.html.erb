@@ -26,19 +26,16 @@
 <!-- <div class="background"> -->
 <div class="welcome">
 
-<div class="profile">
-</div>
-
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-<div class="container">
+
   <%= yield %>
-</div>
-</div>
+
+</div><!-- close welcome -->
 
 </body>
 </html>

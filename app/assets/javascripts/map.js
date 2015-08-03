@@ -6,14 +6,50 @@ $(document).on("page:load", initialize);
 
 function initialize() {
 
+     // Create an array of styles.
+  var styles = [
+    {
+      stylers: [
+        { hue: "#00ffe6" },
+        { saturation: -20 }
+      ]
+    },{
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [
+        { lightness: 100 },
+        { visibility: "simplified" }
+      ]
+    },{
+      featureType: "road",
+      elementType: "labels",
+      stylers: [
+        { visibility: "off" }
+      ]
+    }
+  ];
+
+
+ var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
+
     //setting latlng for santa monica and set it as a variable to user as a center point for mapOptions variable
     var santamonica = new google.maps.LatLng(34.024212,-118.496475);
     var mapOptions = {
         zoom: 10,
-        center: santamonica
+        center: santamonica,
+        mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+     }
     }
     
     var my_map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    //Associate the styled map with the MapTypeId and set it to display.
+  my_map.mapTypes.set('map_style', styledMap);
+  my_map.setMapTypeId('map_style');
+
+
     
 
     navigator.geolocation.getCurrentPosition(function(res){
@@ -28,6 +64,7 @@ function initialize() {
             // The anchor for this image is the base of the flagpole at 0,32.
             anchor: new google.maps.Point(0, 32)
         };
+        
         my_map.setCenter(c);
 
         var currentlocation_marker = new google.maps.Marker({
@@ -90,6 +127,11 @@ function initialize() {
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
             var map = new google.maps.Map(el, mapProps)
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style');
+
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style');
 
             // Bounds are cool because they center our map for us
             var bounds = new google.maps.LatLngBounds()
@@ -120,6 +162,7 @@ function initialize() {
                 markers.push(marker)
 
                 // Add the coordinates to the bounds (so we can center the map)
+
                 bounds.extend(coord)
 
                 // Create an info window
@@ -131,14 +174,16 @@ function initialize() {
                 infowindow.open(map, markers[i])
             }
             // Center and fit the map using the bounds
-
-                    if (promise_results.length > 1) {
+              if (promise_results.length >= 1) {
+                        
                         map.fitBounds(bounds);
+                        
                     }
                     else{
                         map.setCenter(c);
-                        map.setZoom(4);
-                    }  
+                        map.setZoom(10);
+                    } 
+                     
             })
          
         })

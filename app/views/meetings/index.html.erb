@@ -1,29 +1,59 @@
-<h2> You have <%= current_user.meetings.count + current_user.inverse_meetings.count%> meetings</h2>
-	<div>
-	<% for meeting in current_user.meetings %>
-	<% if meeting.receiver%>
-	Send to : <%= meeting.receiver.firstname%>(<%=meeting.receiver.email%>)
-	<% end%>
-	<h4><%= meeting.name %></h4>
-	<p> Where - <%= meeting.location %><br></p>
-	<p> When - <%= meeting.date %><br></p>
-	<p> Detail <%= meeting.description %><br></p>
-	<%= link_to "remove", meeting, :method => :delete %>
-	<%= link_to "Edit", edit_meeting_path(meeting) %>
-	<%end%>
-	
-	</div>
+<div class="user-meetmes">
 
-<h2> Others</h2>
-<div>
-<ul>
-	<% for inverse_meeting in current_user.inverse_meetings %>
-		<h4><%= inverse_meeting.name%> <%=inverse_meeting.receiver.email%></h4><br>
-		<p>Where - <%= inverse_meeting.location%></p>
-		<p>When  - <%= inverse_meeting.date%></p>
-		<p>Detail - <%= inverse_meeting.description%></p>
-		<p>Send by:<%= inverse_meeting.user.email %></p>
-	<% end %>
-</ul>
+	<div class="container">
+
+		<div class="row  allmeetme">
+
+		<h3 class="our-users"> You have <%= current_user.meetings.count + current_user.inverse_meetings.count%> meetings</h3>
+
+			<div class="meetme-box col-md-12">
+				<div class="row">
+						
+				<div class="meetme col-md-6">
+						<h3 class="btn btn-lg"> you sent out <%=current_user.meetings.count%> to your friends</h3>
+					
+					<% for meeting in current_user.meetings %>
+						<div class="meet-at btn btn-md btn-default">
+							
+							<h4><%= meeting.name %></h4><br>
+
+							<td class="col-md-12">
+							<% if meeting.receiver%>
+							with: <%= meeting.receiver.firstname%></td><br>
+							<% end%>
+
+							
+							<%= link_to "detail", meeting_path(meeting), class: "btn no-border"%>
+							
+						</div> <!-- user-meetme -->
+					<%end%>
+				</div>
+
+				
+				<div class="meetme col-md-6">
+					<h3 class="btn btn-lg"> you have <%=current_user.inverse_meetings.count%> invitations from your friends</h3>
+			
+		
+					<% for inverse_meeting in current_user.inverse_meetings %>
+
+					<div class="meet-at btn btn-md btn-default">
+						<h4><%= inverse_meeting.name%></h4><br>
+						
+						<td class="col-md-12">from: <%= inverse_meeting.user.firstname%></td><br>
+						<td><%= link_to "detail", meeting_path(meeting), class: "btn no-border"%></td><br>
+
+					</div> <!-- user-meetme -->
+					
+					<% end %>
+					</div>
+					
+				</div> <!-- row -->
+				</div> <!-- col-md-12 -->
+
+				<div id="map-canvas" class"wide-screen"></div>
+		</div> <!-- row .meetme -->
+
+	</div> <!-- container -->
+
+
 </div>
-<div id="map-canvas"></div>
