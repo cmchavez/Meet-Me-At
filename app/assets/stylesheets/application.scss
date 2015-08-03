@@ -231,8 +231,25 @@ body, html, main {
 
 	}
 
-	.navbar-brand{
-		margin-top: 3%;
+	div.navbar-header{
+		background-color: white;
+		margin-left: -4%;
+		height: 90%;
+		color: black;
+		opacity: 0.9;
+		filter: alpha(opacity=100);
+
+	}
+
+	button.navbar-toggle {
+		background-color: black;
+		color: white;
+		margin-top: 1%;
+	}
+
+	div.navbar-header > a.navbar-brand{
+		color: black;
+
 		
 		
 	}
@@ -244,12 +261,17 @@ body, html, main {
 	.navbar-collapse.in {
 		background-color: black;
 		width: 100%;
-		position: relative;
-		z-index: 1;
+		margin-left: -4%;
+		opacity: 0.9;
+		filter: alpha(opacity=100);
+		
 	}
+
+
 
 	.bar-name{
 		border-bottom: 1px white solid;
+		color: black;
 
 	}
 
