@@ -324,11 +324,19 @@ body, html, main {
 		background-color: transparent;
 	}
 
+
+
 	div.row.new-meetme{
 		margin-top: 20%;
     		margin-left: -1%;
     		color: white;
     		position: inherit;
+    		
+
+	}
+
+	div.row.new-meetme > form {
+		position: inherit;
 	}
 
 	div.row.users {
@@ -392,6 +400,7 @@ body, html, main {
 		margin-top: 25%;
 		padding-top: 4%;
 		padding-bottom: 4%;
+		position: inherit;
 	}
 
 	
