@@ -254,34 +254,50 @@ body, html, main {
 
 	}
 
-	ul.result.col-md-12 {
+	ul.results.col-md-12 {
 
-		width: 100%;
+		width: 110%;
 		border: 1px solid white;
-		margin: 0 auto;
+		margin-left: -5%;
+		margin-right: -5%;
 
+	}
+
+	ul.result {
+		width: 110%;
+		margin-left: -4%;
+		text-align: center;
+		border: none;
 	}
 
 
 	ul>h4.btn.btn-lg.btn-default.no-border {
 		font-size: 15px;
+		text-align: center;
+		margin: 0 auto;
+		color:#80FFFF;
+		
 
 	}
 
 	ul>p.btn.btn-lg.btn-default.no-border {
-		font-size: 12px;
+		font-size: 14px;
+		text-align: center;
+		
 	}
 
-	.search-box {
-		margin-top: 50%;
-		margin-left: -10%;
+	div.row.search-box {
+		margin-top: 20%;
+		margin-left: -1%;
 		color: white;
 
 	}
 
 	nav.navbar.navbar-default {
 		height: 5%;
+		background-color: transparent;
 	}
+
 
 	
  }
@@ -330,9 +346,6 @@ body, html, main {
 		    padding-right:0;
 	  }
 
-	  nav.navbar.navbar-default {
-	  	background-color: white;
-	  }
 
 	  .navbar-collapse.collapse {
 		    display: block !important;
@@ -460,7 +473,7 @@ body, html, main {
 	
 	width: 80%;
 	margin: 0 auto;
-	margin-left: 15%;
+	margin-left: 10%;
 	margin-bottom: 2%;
 	border: 1px solid white;
 	

@@ -37,7 +37,7 @@
 		<ul class="result col-md-12">
 		<h4 class="btn btn-lg btn-default no-border"><%= r["name"]%></h4><br>
 		<p class="btn btn-lg btn-default no-border"><%= r["venue"]["address_1"]%>,<%= r["venue"]["city"]%>,<%= r["venue"]["zip"]%><%= r["venue"]["state"]%></p><br>
-		<h4><%= link_to "Add this to your Meetme@", new_search_path(:params => {:name => r["name"], :location => r["venue"]["zip"], :description => r["event_url"], :meeting => r["created"]}), class: "btn btn-default btn-lg " %></h4>
+		<h4><%= link_to "+ Meetme@", new_search_path(:params => {:name => r["name"], :location => r["venue"]["zip"], :description => r["event_url"], :meeting => r["created"]}), class: "btn btn-default btn-lg " %></h4>
 
 
 		<% end %>
