@@ -276,6 +276,13 @@ height: 100%;
    	font-size: 12px;
    }
 
+   .search-box {
+
+   	margin-top: 50%;
+   	margin-left: -10%;
+	color: white;
+
+}
 
 	
     
@@ -428,18 +435,22 @@ height: 100%;
 
 
 .search-box {
-	margin-top: 20%;
+	margin: 0 auto;
+	margin-top: 10%;
+	margin-left: 10%;
 	color: white;
-
 
 }
 
 .results {
 	width: 100%;
 	text-align: center;
+	
+}
 
-	
-	
+.results > h3 {
+	margin-left: 8%;
+	color: #80FFFF;
 }
 
 .result {
@@ -456,7 +467,6 @@ h4.btn.btn-lg.btn-default.no-border {
 	width: 100%;
 	font-size: 24px;
 	margin: 0 auto;
-	margin-left: -5%;
 	text-align: center;
 
 }

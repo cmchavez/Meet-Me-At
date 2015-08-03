@@ -9,7 +9,7 @@
 		<div class="meetme col-md-12">
 			<h3 class="btn btn-lg"> You sent <%= current_user.meetings.count%> meetme@ to your friends</h3>
 			
-			<% current_user.meetings[0..2].each do |m|%>
+			<% current_user.meetings[0..1].each do |m|%>
 				<div class="meet-at btn btn-md btn-default ">
 				<h4 ><%= m.name %> 
 				with <%=m.receiver.firstname.upcase%>
@@ -27,7 +27,7 @@
 		</div> <!-- close meetme -->
 		<div class="meetme col-md-12">
 			<h3 class="btn btn-lg"> You have <%=current_user.inverse_meetings.count%> from your friends</h3>
-			<% current_user.inverse_meetings[0..2].each do |inverse| %>
+			<% current_user.inverse_meetings[0..1].each do |inverse| %>
 
 				<div class="meet-at btn btn-md btn-default">
 				<h4><%= inverse.name%> with <%=inverse.user.firstname.upcase %></h4>
