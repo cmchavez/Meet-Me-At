@@ -1,4 +1,6 @@
-<div class="container meetme-form" id="wrap1">
+<div class='search-new'>
+
+<div class="container meetme-form" id="wrap">
 
 <div class="row new-meetme">
       	<h2>Add to meetme@</h2>
@@ -11,18 +13,27 @@
 <h4>Friend:</h4>
 <p><%= select_tag "meeting[receiver_id]", options_from_collection_for_select(@total_friends, "id", "firstname") %></p>
 </div>
-
+<div class="field col-xs-12 col-md-12">
 <%#= text_field_tag "meeting[receiver_id]" %>
-<h4> Event name: <h4>
+<h4> Event name: </h4>
 <p><%= text_field_tag "meeting[name]", params[:name], :class=>"form-control input-lg" %></p><br>
+</div>
+
+<div class="field col-xs-12 col-md-12">
 <h4>Location</h4>
 <p><%= text_field_tag "meeting[location]", params[:location], :class=>"form-control input-lg"%></p><br>
+</div>
+
+<div class="field col-xs-12 col-md-12">
 <h4>Description</h4> 	 	
 <p><%= text_field_tag "meeting[description]", params[:description], :class=>"form-control input-lg"%></p><br>
+</div>
 
 <p><%= submit_tag"Add to meetme@", class: "btn btn-default btn-lg"%></p>
 <% end %>
 
+
+</div>
 
 
 
