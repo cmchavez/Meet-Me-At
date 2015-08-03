@@ -19,8 +19,8 @@
 
 			
 				<%= link_to "See detail", meeting_path(m), class: "btn btn-md btn-default no-border"%>
-				<%#= link_to "Edit", edit_meeting_path(meeting, meeting.receiver_id), class: "btn btn-md btn-default back" %>
-				<%#= link_to "Remove", meeting, :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-md btn-default back" %>
+				<%#= link_to "Edit", edit_meeting_path(m), class: "btn btn-md btn-default no-border" %>
+				<%= link_to "Remove", m, :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-md btn-default no-border" %>
 				</div> <!-- meet-at -->
 			<%end%>
 
