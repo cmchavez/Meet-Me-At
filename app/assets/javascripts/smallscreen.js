@@ -6,6 +6,6 @@ function toggle(){
 	
 	$(".navbar-toggle").click(function(){
 	$(".user-profile").toggle("fast");
-	$(".meetme-form").toggle("fast");
+	$(".allmeetme").toggle("fast");
 	});
 }
