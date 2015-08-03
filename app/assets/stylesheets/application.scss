@@ -304,6 +304,29 @@ body, html, main {
     		position: inherit;
 	}
 
+	div.row.users {
+		width: 100%;
+		margin-top: 10%;
+		margin-left: 15%;
+		text-align: center;
+	}
+
+
+	div.row.users > div.user {
+		width: 90%;
+		background-color: black;
+		
+	}
+
+	div.row.users > h1.our-users{
+		margin-top: 10%;
+		margin-left: 3%;
+		font-size: 24px;
+		width: 90%;
+		background-color: black;
+		
+	}
+
 	
  }
 
@@ -512,7 +535,8 @@ p.btn.btn-lg.btn-default.no-border:hover{
 }
 
 div.users {
-	margin-top: 20%;
+	margin-top: 5%;
+	margin-left: 15%;
 }
 
 div.user.col-md-4 {
@@ -520,8 +544,23 @@ div.user.col-md-4 {
 	border: 1px white solid;
 	padding-bottom: 2%;
 	padding-top: 2%;
-	position: inherit;
 	margin-top: 5%;
+	width: 30%;
+	margin-left: 3%;
+	background-color: black;
+	
+}
+
+div.user.col-md-4 > td {
+	margin-top: 3%;
+}
+
+h1.our-users{
+	font-size: 30px;
+	border: 1px white solid;
+	width: 20%;
+	margin: 0 auto;
+	margin-left: 37%;
 }
 
 

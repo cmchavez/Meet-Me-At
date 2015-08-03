@@ -3,13 +3,13 @@
 
 		<div class="row users">
 
-		<h1 class="welcome">Check Out Other Users </h1>
+		<h1 class="our-users">our users </h1>
 
 			
 			<% @users.each do |u| %>
 			<div class="user col-md-4">
-			<td> <%= image_tag u.image, :class=> "profile-image"%></td><br>
-			<td> <%= u.firstname%> <%= u.lastname%></td><br>
+			<td> <%= image_tag u.image, :class=> "profile-image"%></td><br><br>
+			<td> <%= u.firstname%> <%= u.lastname%></td><br><br>
 			
 
 
@@ -19,7 +19,7 @@
 	      		</td><br> -->
 	   
 	    		
-	      		<td><%= link_to "add to contact", friendships_path(:friend_id => u), :method => :post, class: "btn btn-default btn-lg" %></td><br>
+	      		<td><%= link_to "add to contact", friendships_path(:friend_id => u), :method => :post, class: "btn btn-default btn-lg" %></td><br><br>
 	      		<!-- <td><%#= link_to "Add a Meetme", new_meeting_path(:params =>{:receiver_id => u})%></td><br> -->
 	      	
 			
