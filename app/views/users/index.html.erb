@@ -8,8 +8,8 @@
 			
 			<% @users.each do |u| %>
 			<div class="user col-md-4">
-			<td> <%= image_tag u.image, :class=> "profile-image"%></td><br><br>
-			<td> <%= u.firstname%> <%= u.lastname%></td><br><br>
+			<td class="col-md-12"> <%= image_tag u.image(:med), :class=> "profile-image"%></td><br><br>
+			<td class="col-md-12"> <%= u.firstname%> <%= u.lastname%></td><br><br>
 			
 
 
