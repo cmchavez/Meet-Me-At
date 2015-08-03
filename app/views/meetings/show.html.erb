@@ -1,18 +1,27 @@
-<div>
-<h2> <%= @meeting.name%> </h2>
-	<h3> with <%= @meeting.receiver.firstname %></h3>
-	<h3> in <%= @meeting.location %></h3>
-	<% if @meeting.date %>
-	<h3> on <%= @meeting.date %></h3>
-	<% end %>
-	<h3> Detail : <%= @meeting.description %></h3>
-	<% if current_user == @meeting.user_id %>
-	<%= link_to "Edit", edit_meeting_path(@meeting) %>
-	<%= link_to "Remove", @meeting, :method => :delete %>
-	<% end %>
-</div>
+<div class="show-meetme">
 
-<div id="map-canvas"></div>
+	<div class="container">
+		<div class="row a-meeting">
+
+		<div class="col-md-12 user-box">
+		<h2> <%= @meeting.name%> </h2>
+			<h3> with <%= @meeting.receiver.firstname %></h3>
+			<h3> where: <%= @meeting.location %></h3>
+			<% if @meeting.date %>
+			<h3> at: <%= @meeting.date %></h3>
+			<% end %>
+			<h3> detail : <%= @meeting.description %></h3>
+			<%= link_to "Remove", @meeting, :method => :delete, class: "btn btn-md btn-default border" %>
+		</div>
+
+		</div>
+		</div>
+
+	</div>
+
+
+
+</div>
 
 
 
