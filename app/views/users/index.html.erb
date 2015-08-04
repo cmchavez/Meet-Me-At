@@ -1,26 +1,31 @@
-<div class="col-xs-6 col-md-6">
-<h1>Check Out Other Users </h1>
 
-<% @users.each do |u| %>
+<div class="all-users">
+	<div class="container">
 
-	<div class="columns col col-sm-6 col-md-4 form-group">
-	<tr>
+		<div class="row users">
 
-		<td> <%= u.firstname.upcase %></td> <br>
-		<td> <%= image_tag u.image, :class=> "profile-image"%></td> <br>
-	
-		<!-- <td><%#= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
-	                    "data-sid" => current_user.id, "data-rip" => u.id %>
+		<h1 class="our-users">our users </h1>
 
-      		</td><br> -->
-    </tr>
- 
-      		<td><%= link_to "Add to My Contacts", friendships_path(:friend_id => u), :method => :post, class: "btn btn-sm btn-warning" %></td><br>
-      		<!-- <td><%#= link_to "Add a Meetme", new_meeting_path(:params =>{:receiver_id => u})%></td><br> -->
-      	</tr>
-      	
-</div>
-	<% end %>
+			
+			<% @users.each do |u| %>
+			<div class="user col-md-4">
+			<td> <%= image_tag u.image, :class=> "profile-image"%></td><br><br>
+			<td> <%= u.firstname%> <%= u.lastname%></td><br><br>
+			
 
-<div id="myprofilebutton">
-</div>
+
+			<!-- <td><%#= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+		                    "data-sid" => current_user.id, "data-rip" => u.id %>
+	      		</td><br> -->
+	   
+	    		
+	      		<td><%= link_to "add to contact", friendships_path(:friend_id => u), :method => :post, class: "btn btn-default btn-lg" %></td><br><br>
+	      		<!-- <td><%#= link_to "Add a Meetme", new_meeting_path(:params =>{:receiver_id => u})%></td><br> -->
+	      	
+			
+			</div>
+			<% end %>
+
+
+		</div>
+	</div>
