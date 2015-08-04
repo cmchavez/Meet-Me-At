@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
-  has_attached_file :image, :styles => { :small => "64x64#", :med => "100x100#", :large =>"200x200>" }, :default_url =>"default_profile.png"
+  has_attached_file :image, :styles => { :small => "64x64#", :med => "100x100#", :large =>"200x200>" }, :default_url =>"http://imgur.com/fj7eOAP"
 
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
