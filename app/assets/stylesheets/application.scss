@@ -233,7 +233,8 @@ body, html, main {
 
 	div.navbar-header{
 		background-color: white;
-		margin-left: -4%;
+		margin-left: -6%;
+		margin-right: 5%;
 		height: 90%;
 		color: black;
 		opacity: 0.9;
@@ -342,24 +343,24 @@ body, html, main {
 	div.row.users {
 		width: 100%;
 		margin-top: 10%;
-		margin-left: 15%;
 		text-align: center;
 	}
 
 
 	div.row.users > div.user {
 		width: 90%;
-		background-color: black;
+		background-color: transparent;
+		margin-left: -3%;
 		position: inherit;
 		
 	}
 
 	div.row.users > h1.our-users{
 		margin-top: 10%;
-		margin-left: 3%;
+		margin-left: -3%;
 		font-size: 24px;
 		width: 90%;
-		background-color: black;
+		background-color: transparent;
 		position: inherit;
 		
 	}
@@ -419,10 +420,16 @@ body, html, main {
 
 		.user.col-md-4 {
 			width: 90%;
-			background-color: black;
+			background-color: transparent;
 			position: inherit;
 
 		}
+	}
+
+	div.row.invite-friend {
+		width: 100%;
+		margin-top: 20%;
+		text-align: center;
 	}
 
 
@@ -745,6 +752,24 @@ div.userpage {
 	font-size: 14px;
 }
 
+
+
+
+#map-canvas.div  {
+	background-color: black;
+}
+
+#map-canvas h3 {
+  color: #00688b;
+  font-weight: bold;
+  font-size: 12px;
+
+}
+
+#map-canvas p {
+  font-size: 10px;
+  color: black;
+}
 
 
 

@@ -2,8 +2,6 @@ $(document).ready(initialize);
 $(document).on("page:load", initialize);
 
 
-
-
 function initialize() {
 
      // Create an array of styles.
@@ -145,6 +143,8 @@ function initialize() {
 
                 var  promise_result = promise_results[i][0]
 
+
+
                 // result now represents a single geocoded address
                 var coord = promise_result.geometry.location
                 var image1 = {
@@ -167,22 +167,25 @@ function initialize() {
 
                 // Create an info window
                 var infowindow = new google.maps.InfoWindow({
-                    content: "<h1>" + results[i].name + "</h1>" + results[i].description
+                    content: "<h3>" + results[i].name + "</h3>" + "<p>" + results[i].description +"</p>"
+
+
                 })
+
+                console.log(infowindow.content)
 
                 // Open it above the marker
                 infowindow.open(map, markers[i])
             }
             // Center and fit the map using the bounds
-              if (promise_results.length >= 1) {
+              if (promise_results.length >1) {
                         
                         map.fitBounds(bounds);
                         
-                    }
-                    else{
-                        map.setCenter(c);
+                } else{
+                        map.setCenter(bounds.getCenter());
                         map.setZoom(10);
-                    } 
+                } 
                      
             })
          
